@@ -1,41 +1,45 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
-<meta http-equiv="Content-Type" content="text/html" />
-<meta charset="utf-8">
-<?php include ("seguridad.php");
-include ("consultas.php");
+﻿<?php 
+include ("api/seguridad.php");
+include ("api/consultas.php");
 $id_propiedad = $_GET["id"];
-$propiedad = consultar("SELECT * FROM propiedades WHERE id_propiedad= $id_propiedad");
+$propiedad = consultar("SELECT * FROM propiedades WHERE IdPropiedad= $id_propiedad");
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <head>
 <title>Editar propiedad</title>
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  <script type="text/javascript" src="js/underscore.js"></script>
-  <script type="text/javascript" src="js/clicks.js"></script>
-  <script type="text/javascript" src="js/validar.js"></script>
-  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAHIev-SgOWp6Fa9I7kaHePTUcP5AKQqfk&amp;sensor=false"
-      type="text/javascript"></script>
+  <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/libs/jquery.js"></script>
+    <script src="assets/js/libs/underscore.js"></script>
+    <script src="assets/js/libs/backbone.js"></script>
+    <script src="assets/js/libs/IEChecker.js"></script>
+    <script src="assets/js/libs/jquery-uiDatePicker.js"></script>
+    <script src="assets/js/libs/jQueryDataPickerEs.js"></script>
+    <script src="assets/js/libs/bootstrapModal.js"></script>
+    <script src="assets/js/libs/jQueryDnDAlerts.js"></script>
+    <script src="assets/js/libs/jQueryAlerts.js"></script>
+    <script type="text/javascript" src="assets/js/clicks.js"></script>
+    <script src="http://maps.google.com/maps?file=api&;v=2&;key=AIzaSyAHIev-SgOWp6Fa9I7kaHePTUcP5AKQqfk&;sensor=false" type="text/javascript"></script>
     <script type="text/javascript">
-    var map      = null;
-    var geocoder = null;
-    function load() {
+      var map      = null;
+      var geocoder = null;
+      function load() {
         map = new GMap2(document.getElementById("map"));
         map.setCenter(new GLatLng(19.23944127048188,-103.723670410115625), 15);
         map.addControl(new GSmallMapControl());
-	   	map.addControl(new GMapTypeControl());
+	   	  map.addControl(new GMapTypeControl());
         geocoder = new GClientGeocoder();
-		GEvent.addListener(map, "click",
-			function(marker, point) {
- 		 		if (marker) {
-               		null;
-              		} else {
-          			map.clearOverlays();
-					var marcador = new GMarker(point);
-					map.addOverlay(marcador);
-					var puntos = point.y.toFixed(4)+","+point.x.toFixed(4);
-					document.form.coordenadas.value = String(puntos);
+		    GEvent.addListener(map, "click",
+			   function(marker, point) {
+ 		 		  if (marker) {
+            null;
+          } else {
+          	 map.clearOverlays();
+					   var marcador = new GMarker(point);
+					   map.addOverlay(marcador);
+					   var puntos = point.y.toFixed(4)+","+point.x.toFixed(4);
+					   document.form.coordenadas.value = String(puntos);
 					}
   			}
 			);
@@ -66,10 +70,10 @@ return patron.test(tecla_valor);
 	<li><a href="http://www.ampicolima.com.mx/admin/archivos/vso_redimensionar.exe">Baja aqui software redimenicionar</a></li>
 </ul>
 </div>
-<form name="form" method="post" action="edit.php" onsubmit="return validarForm(this)"; >
+<form name="form" method="post" action="api/editProperty.php" enctype="multipart/form-data">
 <?php
 $estados= consultar("SELECT * FROM estados");
-echo "<input type= 'text' hidden='true' name='id_propiedad' value='".$propiedad['0']['id_propiedad']."'></input>";
+echo "<input type= 'text' hidden='true' name='id' value='".$propiedad['0']['IdPropiedad']."'></input>";
 echo "<p>Dirección: <input type= 'text' name='direccion' value='".$propiedad['0']['Direccion']."'></input></p>";
 echo "<p>Colonia: <input type= 'text' name='colonia' value='".$propiedad['0']['Colonia']."'></input></p>";
 echo "<p>Estado: <select name='estado' class='cambiar'> <option value='0'>Seleccione un estado</option>";
@@ -124,7 +128,7 @@ echo "<option value='varios'>varios</option>";
 echo "</select></p>";
 ?>
 <?php
-echo "<p>Baño(s): <select name='bathroom'>";
+echo "<p>Baño(s): <select name='bath'>";
 for ($i=0; $i<7; $i++){
   echo "<option value='".$i."'>".$i."</option>";
 }
@@ -155,10 +159,16 @@ echo "</select></p>";
 <option value ="Departamento">Departamento</option>
 <option value ="Hotel">Hotel</option>
 </select></p>
-<p>Fecha inicio de disponibilidad<input type="text" name="fecha_inicio" value="<?php echo $propiedad['0']['Fecha_inicio'];?>"><p>
-<p>Fecha final de disponibilidad<input type="text" name="fecha_fin" value="<?php echo $propiedad['0']['Fecha_fin'];?>"><p>
+<p>Fecha inicio de disponibilidad<input type="text" name="finicio" value="<?php echo $propiedad['0']['FInicio'];?>"><p>
+<p>Fecha final de disponibilidad<input type="text" name="ffin" value="<?php echo $propiedad['0']['FFin'];?>"><p>
+<p>Imagen 1: <input type="file" name="foto1" accept='image/jpeg, image/bmp' value="">
+<p>Imagen 2: <input type="file" name="foto2" accept='image/jpeg, image/bmp' value="">
+<p>Imagen 3: <input type="file" name="foto3" accept='image/jpeg, image/bmp' value="">
+<p>Imagen 4: <input type="file" name="foto4" accept='image/jpeg, image/bmp' value="">
+<p>Imagen 5: <input type="file" name="foto5" accept='image/jpeg, image/bmp' value="">
+<p>Imagen 6: <input type="file" name="foto6" accept='image/jpeg, image/bmp' value="">
 <p>Descripción: <textarea name="descripcion"rows="10" maxlength="500"><?php echo $propiedad['0']['Descripcion'];?></textarea>
-<p>Coordenadas: <input type="text" name="coordenadas" readonly="readonly" style="width: 150px;"/></p>
+<p>Coordenadas: <input type="text" name="coordenadas" readonly="readonly" style="width: 150px;" value ="<?php echo $propiedad['0']['Coordenadas'];?>"/></p>
 <div id="map" style="width: 600px; height: 400px; position: relative; background-color: rgb(229, 227, 223);">
 </div>
 <input type="submit" name="editar" class="button" value="Enviar">
