@@ -66,7 +66,7 @@
 	<li><a href="http://www.ampicolima.com.mx/admin/archivos/vso_redimensionar.exe">Baja aqui software redimenicionar</a></li>
 </ul>
 </div>
-<form name ="form" method="post" action="form.php" onsubmit="return validarForm(this)">
+<form name ="form" method="post" action="api/form.php" onsubmit="return validarForm(this)">
 <p>Dirección: <input type= 'text' name='direccion'/></p>
 <p>Colonia: <input type= 'text' name='colonia'/></p>
 <?php
@@ -122,7 +122,7 @@ echo "<option value='varios'>varios</option>";
 echo "</select></p>";
 ?>
 <?php
-echo "<p>Baño(s): <select name='bathroom'>";
+echo "<p>Baño(s): <select name='bath'>";
 for ($i=0; $i<7; $i++){
   echo "<option value='".$i."'>".$i."</option>";
 }
@@ -153,10 +153,10 @@ echo "</select></p>";
 <option value ="Departamento">Departamento</option>
 <option value ="Hotel">Hotel</option>
 </select></p>
-<p>Fecha inicio de disponibilidad<input type="text" name="fecha_inicio" value="<?php echo $today;?>"><p>
-<p>Fecha final de disponibilidad<input type="text" name="fecha_fin" value="<?php echo $today;?>"><p>
-<p>Descripción: <textarea name="descripcion"rows="10" maxlength="500"></textarea>
-<p>Coordenadas: <input type="text" name="coordenadas" readonly="readonly" value="" style="width: 150px;"/></p>
+<p>Fecha inicio de disponibilidad<input type="text" name="finicio" value="<?php echo $today;?>"><p>
+<p>Fecha final de disponibilidad<input type="text" name="ffin" value="<?php echo $today;?>"><p>
+<p>Descripción: <textarea name="descripcion" rows="10" maxlength="500"></textarea>
+<p>Coordenadas: <input type="text" name="coordenadas" readonly="readonly" style="width: 150px;"/></p>
 <div id="map" style="width: 600px; height: 400px; position: relative; background-color: rgb(229, 227, 223);">
 </div>
 <input type="submit" name="agregar" value="Enviar">

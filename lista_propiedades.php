@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <?php include("api/seguridad.php");
 	include("api/consultas.php");
-	$propiedades= consultar("SELECT * FROM propiedades WHERE Disponibilidad='Disponible'"); ?>
+	$propiedades= consultar("SELECT * FROM propiedades WHERE Disponible='Si'"); ?>
 <head>
 <title>
 Bienvenido al sistema
@@ -15,7 +15,7 @@ Bienvenido al sistema
 <ul>
 	<li><a href="lista_propiedades.php">Inmuebles</a></li>
 	<li><a href="mis_movimientos.php">Mis movimientos</a></li>
-	<li><a href="salir.php">Salir</a></li>
+	<li><a href="api/salir.php">Salir</a></li>
 </ul>
 </div>
 <div>
@@ -32,10 +32,9 @@ Bienvenido al sistema
 	<tbody>
 <?php
 	foreach ($propiedades as $propiedad){
-	echo "<tr><td>".$propiedad['Direccion']."</br>".$propiedad['Colonia']."</td>";
-	echo "<td>".$propiedad['Inmobiliaria']."</td>";
-	echo "<td>".$propiedad['Estado']."</td>";
-	echo "<td>".$propiedad['Municipio']."</td>";
+	echo "<tr><td>".$propiedad["Direccion"]."</br>".$propiedad["Colonia"]."</td>";
+	echo "<td>".$propiedad["Estado"]."</td>";
+	echo "<td>".$propiedad["Municipio"]."</td>";
 	echo "<td><a href=". ("editar.php?id=". $propiedad["id_propiedad"]) .">Modificar</a>";
 	echo "<a href=". ("baja.php?id=". $propiedad["id_propiedad"]) .">Cerrar</a></td></tr>";
 	}

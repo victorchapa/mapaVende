@@ -1,5 +1,4 @@
 <?php
-//include("seguridad.php");
 $id_propiedad = $_POST['id_propiedad'];
 $direccion = $_POST['direccion'];
 $colonia = $_POST['colonia'];
