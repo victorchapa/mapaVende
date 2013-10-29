@@ -1,5 +1,7 @@
 ﻿<?php
 include("seguridad.php");
+include("consultas.php");
+require("dbConfig.php");
 $direccion = $_POST['direccion'];
 $colonia = $_POST['colonia'];
 $id_estado = (string)$_POST['estado'];
@@ -22,15 +24,14 @@ $descripcion = $_POST['descripcion'];
 $coordenadas = $_POST['coordenadas'];
 $disponible = "Si";
 
-mysql_connect("localhost", "mapavend_israel", "israel2013");
-mysql_select_db("mapavend_prueba");
-$estado = mysql_query("SELECT estado FROM estados WHERE id_estado= '$id_estado'");
-$municipio = mysql_query("SELECT municipio FROM municipios WHERE id_municipio = $id_municipio");
-$municipio = mysql_fetch_array($municipio);
-$estado= mysql_fetch_array($estado);
-
+$estado = consultar("SELECT estado FROM estados WHERE id_estado= '$id_estado'");
+$municipio = consultar("SELECT municipio FROM municipios WHERE id_municipio = $id_municipio");
+$estado= $estado["0"]["estado"];
+$municipio = $municipio["0"]["municipio"];
+$conexion =  mysql_connect($serverAddress, $user, $passwd);
+mysql_select_db($dbName);
 mysql_query("INSERT INTO propiedades (Direccion, Colonia, Estado, Municipio, Construccion, Unidad1, Terreno, Unidad2, Precio, Moneda, Piso, Cochera, Cuarto, Bath, TOperacion, TPropiedad, FInicio, FFin, Descripcion, Coordenadas, Disponible) 
-VALUES ('$direccion', '$colonia', '$estado[0]', '$municipio[0]', '$construccion', '$unidad1', '$terreno', '$unidad2', '$precio', '$moneda', '$piso', '$cochera', '$cuarto', '$bathroom', '$toperacion', '$tpropiedad', '$fecha_inicio', '$fecha_fin', '$descripcion', '$coordenadas', '$disponible')");
+VALUES ('$direccion', '$colonia', '$estado', '$municipio', '$construccion', '$unidad1', '$terreno', '$unidad2', '$precio', '$moneda', '$piso', '$cochera', '$cuarto', '$bath', '$toperacion', '$tpropiedad', '$finicio', '$ffin', '$descripcion', '$coordenadas', '$disponible')");
 echo "<script> alert(\"Agregado exitosamente\"); </script>";
-echo "<script type=text/javascript>window.location.href=\"lista_propiedades.php\";</script>";
+echo "<script type=text/javascript>window.location.href=\"../lista_propiedades.php\";</script>";
 ?> 
