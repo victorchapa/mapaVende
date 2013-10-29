@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-10-2013 a las 18:27:57
+-- Tiempo de generación: 29-10-2013 a las 19:35:31
 -- Versión del servidor: 5.6.12-log
 -- Versión de PHP: 5.4.12
 
@@ -354,11 +354,6 @@ INSERT INTO `municipios` (`id_municipio`, `id_estado`, `municipio`) VALUES
 (262, 8, 'Minatitlán'),
 (263, 8, 'Tecomán'),
 (264, 8, 'Villa De Álvarez'),
-(265, 8, ''),
-(266, 8, ''),
-(267, 8, ''),
-(268, 8, ''),
-(269, 8, ''),
 (270, 10, 'Canatlán'),
 (271, 10, 'Canelas'),
 (272, 10, 'Coneto De Comonfort'),
@@ -1904,11 +1899,24 @@ CREATE TABLE IF NOT EXISTS `propiedades` (
   `TPropiedad` varchar(20) NOT NULL,
   `FInicio` varchar(10) NOT NULL,
   `FFin` varchar(10) NOT NULL,
+  `Foto1` varchar(250) NOT NULL,
+  `Foto2` varchar(250) NOT NULL,
+  `Foto3` varchar(250) NOT NULL,
+  `Foto4` varchar(250) NOT NULL,
+  `Foto5` varchar(250) NOT NULL,
+  `Foto6` varchar(250) NOT NULL,
   `Descripcion` varchar(500) NOT NULL,
   `Coordenadas` varchar(100) NOT NULL,
   `Disponible` varchar(2) NOT NULL,
   PRIMARY KEY (`IdPropiedad`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Volcado de datos para la tabla `propiedades`
+--
+
+INSERT INTO `propiedades` (`IdPropiedad`, `Direccion`, `Colonia`, `Estado`, `Municipio`, `Construccion`, `Unidad1`, `Terreno`, `Unidad2`, `Precio`, `Moneda`, `Piso`, `Cochera`, `Cuarto`, `Bath`, `TOperacion`, `TPropiedad`, `FInicio`, `FFin`, `Foto1`, `Foto2`, `Foto3`, `Foto4`, `Foto5`, `Foto6`, `Descripcion`, `Coordenadas`, `Disponible`) VALUES
+(7, 'Dirección 1', 'Colonia 1', 'Colima', 'Villa De Álvarez', '12', 'M2', 14, 'M2', 123456, 'Pesos', 1, '1', '1', '1', 'Venta', 'Casa', '29/10/2013', '29/10/2015', 'property/7/img1.jpg', 'property/7/img2.jpg', 'property/7/img3.jpg', 'property/7/img4.jpg', 'property/7/img5.jpg', 'property/7/img6.jpg', 'Nueva de paquete', '19.2402,-103.7290', 'Si');
 
 -- --------------------------------------------------------
 

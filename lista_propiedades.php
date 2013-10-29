@@ -24,7 +24,6 @@ Bienvenido al sistema
 <table>
 	<thead>
 		<th>Dirección</th>
-		<th>Inmobiliaria</th>
 		<th>Estado</th>
 		<th>Municipio</th>
 		<th>Operaciones</th>
@@ -35,8 +34,8 @@ Bienvenido al sistema
 	echo "<tr><td>".$propiedad["Direccion"]."</br>".$propiedad["Colonia"]."</td>";
 	echo "<td>".$propiedad["Estado"]."</td>";
 	echo "<td>".$propiedad["Municipio"]."</td>";
-	echo "<td><a href=". ("editar.php?id=". $propiedad["id_propiedad"]) .">Modificar</a>";
-	echo "<a href=". ("baja.php?id=". $propiedad["id_propiedad"]) .">Cerrar</a></td></tr>";
+	echo "<td><a href=". ("editar.php?id=". $propiedad["IdPropiedad"]) .">Modificar</a>";
+	echo "<a href=". ("baja.php?id=". $propiedad["IdPropiedad"]) .">Cerrar</a></td></tr>";
 	}
 } else {
 echo "<p>No tienes ninguna propiedad</p>";

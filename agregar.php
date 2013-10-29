@@ -1,7 +1,7 @@
 <?php
   include("api/seguridad.php");
   include("api/consultas.php");
-  $today = date("y/m/d"); ?>
+  $today = date("d/m/Y"); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -66,7 +66,7 @@
 	<li><a href="http://www.ampicolima.com.mx/admin/archivos/vso_redimensionar.exe">Baja aqui software redimenicionar</a></li>
 </ul>
 </div>
-<form name ="form" method="post" action="api/form.php" onsubmit="return validarForm(this)">
+<form name ="form" method="post" action="api/addProperty.php" enctype="multipart/form-data">
 <p>Dirección: <input type= 'text' name='direccion'/></p>
 <p>Colonia: <input type= 'text' name='colonia'/></p>
 <?php
@@ -155,6 +155,12 @@ echo "</select></p>";
 </select></p>
 <p>Fecha inicio de disponibilidad<input type="text" name="finicio" value="<?php echo $today;?>"><p>
 <p>Fecha final de disponibilidad<input type="text" name="ffin" value="<?php echo $today;?>"><p>
+<p>Imagen 1: <input type="file" name="foto1" accept='image/jpeg, image/bmp'>
+<p>Imagen 2: <input type="file" name="foto2" accept='image/jpeg, image/bmp'>
+<p>Imagen 3: <input type="file" name="foto3" accept='image/jpeg, image/bmp'>
+<p>Imagen 4: <input type="file" name="foto4" accept='image/jpeg, image/bmp'>
+<p>Imagen 5: <input type="file" name="foto5" accept='image/jpeg, image/bmp'>
+<p>Imagen 6: <input type="file" name="foto6" accept='image/jpeg, image/bmp'>
 <p>Descripción: <textarea name="descripcion" rows="10" maxlength="500"></textarea>
 <p>Coordenadas: <input type="text" name="coordenadas" readonly="readonly" style="width: 150px;"/></p>
 <div id="map" style="width: 600px; height: 400px; position: relative; background-color: rgb(229, 227, 223);">
