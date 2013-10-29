@@ -1,52 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<?php include("seguridad.php");
-$today = date("y/m/d"); ?>
-<head>
-<title>Agregar propiedad</title>
-    <script type="text/javascript" src="js/jquery.js"></script>
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  <script type="text/javascript" src="js/underscore.js"></script>
-  <script type="text/javascript" src="js/clicks.js"></script>
-  <script type="text/javascript" src="js/validar.js"></script>
-  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAHIev-SgOWp6Fa9I7kaHePTUcP5AKQqfk&amp;sensor=false"
-      type="text/javascript"></script>
+<?php
+  include("api/seguridad.php");
+  include("api/consultas.php");
+  $today = date("y/m/d"); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mapavende</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/libs/jquery.js"></script>
+    <script src="assets/js/libs/underscore.js"></script>
+    <script src="assets/js/libs/backbone.js"></script>
+    <script src="assets/js/libs/IEChecker.js"></script>
+    <script src="assets/js/libs/jquery-uiDatePicker.js"></script>
+    <script src="assets/js/libs/jQueryDataPickerEs.js"></script>
+    <script src="assets/js/libs/bootstrapModal.js"></script>
+    <script src="assets/js/libs/jQueryDnDAlerts.js"></script>
+    <script src="assets/js/libs/jQueryAlerts.js"></script>
+    <script type="text/javascript" src="assets/js/clicks.js"></script>
+    <script src="http://maps.google.com/maps?file=api&;v=2&;key=AIzaSyAHIev-SgOWp6Fa9I7kaHePTUcP5AKQqfk&;sensor=false" type="text/javascript"></script>
     <script type="text/javascript">
     var map      = null;
     var geocoder = null;
     function load() {
-        map = new GMap2(document.getElementById("map"));
-        map.setCenter(new GLatLng(19.23944127048188,-103.723670410115625), 15);
-        map.addControl(new GSmallMapControl());
+      map = new GMap2(document.getElementById("map"));
+      map.setCenter(new GLatLng(19.23944127048188,-103.723670410115625), 15);
+      map.addControl(new GSmallMapControl());
 	   	map.addControl(new GMapTypeControl());
-        geocoder = new GClientGeocoder();
-		GEvent.addListener(map, "click",
+      geocoder = new GClientGeocoder();
+		  GEvent.addListener(map, "click",
 			function(marker, point) {
  		 		if (marker) {
-               		null;
-              		} else {
-          			map.clearOverlays();
-					var marcador = new GMarker(point);
-					map.addOverlay(marcador);
-					var puntos = point.y.toFixed(4)+","+point.x.toFixed(4);
-					document.form.coordenadas.value = String(puntos);
+          null;
+        } else {
+          	map.clearOverlays();
+					 var marcador = new GMarker(point);
+					 map.addOverlay(marcador);
+					 var puntos = point.y.toFixed(4)+","+point.x.toFixed(4);
+					 document.form.coordenadas.value = String(puntos);
 					}
   			}
-			);
-    }
-	 </script>
-  <script>
-function validar(e){
-tecla_codigo = (document.all) ? e.keyCode : e.which;
-if(tecla_codigo==8)return true;
-patron =/[0-9.]/;
-tecla_valor = String.fromCharCode(tecla_codigo);
-return patron.test(tecla_valor);
-
-}
-</script>
+			 );
+      }
+	   </script>
+     <script>
+      function validar(e){
+      tecla_codigo = (document.all) ? e.keyCode : e.which;
+      if(tecla_codigo==8)return true;
+      patron =/[0-9.]/;
+      tecla_valor = String.fromCharCode(tecla_codigo);
+      return patron.test(tecla_valor);
+      }
+     </script>
   </head>
 <body onload="load();" onunload="GUnload();">
 <h1>Agregar propiedad</h1>
@@ -65,7 +70,6 @@ return patron.test(tecla_valor);
 <p>Dirección: <input type= 'text' name='direccion'/></p>
 <p>Colonia: <input type= 'text' name='colonia'/></p>
 <?php
-include("consultas.php");
 $estados= consultar("SELECT * FROM estados");
 echo "<p>Estado: <select name='estado' class='cambiar'> <option value='0'>Seleccione un estado</option>";
 foreach ($estados as $estado){

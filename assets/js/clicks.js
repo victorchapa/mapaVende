@@ -6,7 +6,7 @@ $(document).ready(function(){
         }else{
             $.ajax({
                 type: 'POST',
-                url: 'municipio.php',
+                url: 'api/municipio.php',
                 data:{
                     id_estado:id
                 },
@@ -21,8 +21,3 @@ $(document).ready(function(){
         }
 	});
 });
-
-
-
-
-					

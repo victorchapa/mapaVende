@@ -1,6 +1,6 @@
 <?php
 	$serverAddress="localhost";
-	$dbName="clubimperial";
+	$dbName="mapavende";
 	$user="root";
 	$passwd="root";
 ?>
