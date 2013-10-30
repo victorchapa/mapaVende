@@ -1,0 +1,72 @@
+/* Main MAPA's CSS */
+
+.loginField {
+  position: absolute;
+  z-index: 2;
+  right: 0%;
+  top: 0%;
+  background: #0404B4;
+  border-radius: 15px 0 0 15px;
+  padding: 0 10px 0px 10px;
+  border: 1px solid #08298A;
+  color: white;
+  height: 53px;
+  
+}
+
+.loginField p, .loginField form {
+  display: inline-block;
+}
+
+.loginField .brandLogin {
+  width: 95px;
+  display: inline-block;
+}
+
+#loginForm {
+  margin-left: 5px;
+}
+
+#loginForm input[type="text"], #loginForm input[type="password"] {
+  text-align: center;
+}
+
+#loginForm input[type="submit"] {
+  background: #FF8000;
+  border-color: #DF7401;
+  color: #F2F2F2;
+  font-weight: bold;
+}
+.loginAs {
+  position: absolute;
+  right: 0%;
+  z-index: 1;
+  margin-top: 30px;
+  background: #0B0B61;
+  border-radius: 12px 0 0 12px;
+  color: white;
+  padding: 10px;
+}
+
+.loginAs ul {
+  list-style: none;
+}
+
+.loginAs ul li a {
+  color: orange;
+  text-decoration: none;
+}
+
+#filters {
+  border: 1px solid black;
+  width: 17%;
+  height: 150px;
+  margin-left: 0px;
+  float: left;
+}
+
+#mainContainer {
+  border: 1px solid black;
+  margin-left: 18%;
+  height: 500px;
+}
