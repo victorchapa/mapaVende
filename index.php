@@ -1,4 +1,6 @@
-<?php //include("api/seguridad.php"); ?>
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,22 +17,16 @@
     <script src="assets/js/loadMap.js"></script>
   </head>
   <body>
-    <header>
+    <header id="mainHeader">
       <section class="loginField">
-        <div class="brandLogin"><p>Iniciar sesión</p></div>
-        <form id="loginForm" method="POST" action="api/login.php">
+      <div class="brandLogin"><p>Iniciar sesión</p><input id="logeado" type="hidden" value="<?php if(isset($_SESSION["autentica"])){echo $_SESSION["autentica"]; }else{echo "NO";} ?>"></div>
+        <form id="loginForm" method="POST" action="api/login.php" style="display: none;">
           <input type="text" name="usuario" placeholder="Usuario">
           <input type="password" name="clave" placeholder="Password">
           <input type="submit" value="Ingresar">
         </form>
       </section>
       <div class="loginAs">
-        <h1>Bienvenido <?php //echo $_SESSION["username"] ?></h1>
-        <ul>
-          <li><a href="lista_propiedades.php">Inmuebles</a></li>
-          <li><a href="mis_movimientos.php">Mis movimientos</a></li>
-          <li><a href="api/salir.php">Salir</a></li>
-        </ul>
       </div>
       <div class="logoContainer">
         <img src="assets/img/mapaLogo.png">
@@ -46,9 +42,15 @@
     <footer></footer>
     <!-- Scripting -->
     <script src="assets/js/mapaCustomaizer.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/router.js"></script>
+    <script src="assets/js/templates.js"></script>
     <!-- Templates -->
+    <script src="templates/loginAs.js"></script>
     <!-- Collections -->
     <!-- Models -->
     <!-- Views -->
+    <script src="assets/js/app/views/loginView.js"></script>
+
   </body>
 </html>
