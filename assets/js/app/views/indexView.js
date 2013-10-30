@@ -5,6 +5,13 @@ var IndexView = Backbone.View.extend({
     events: {},
 
     initialize: function(){
-        console.log("DO IT!");
+        $("#slider").slider();
+        var propertiesCollection = new PropertiesCollection();
+        propertiesCollection.fetch({
+            success: function(data){
+                var data = data.toJSON(); 
+                drawingMarkers(data);
+            },
+        });
     },
 });
