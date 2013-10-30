@@ -20,6 +20,8 @@ $propiedad = consultar("SELECT * FROM propiedades WHERE IdPropiedad= $id_propied
     <script src="assets/js/libs/jQueryDnDAlerts.js"></script>
     <script src="assets/js/libs/jQueryAlerts.js"></script>
     <script type="text/javascript" src="assets/js/clicks.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
     <script src="http://maps.google.com/maps?file=api&;v=2&;key=AIzaSyAHIev-SgOWp6Fa9I7kaHePTUcP5AKQqfk&;sensor=false" type="text/javascript"></script>
     <script type="text/javascript">
       var map      = null;
@@ -38,7 +40,7 @@ $propiedad = consultar("SELECT * FROM propiedades WHERE IdPropiedad= $id_propied
           	 map.clearOverlays();
 					   var marcador = new GMarker(point);
 					   map.addOverlay(marcador);
-					   var puntos = point.y.toFixed(4)+","+point.x.toFixed(4);
+					   var puntos = point.y.toFixed(6)+","+point.x.toFixed(6);
 					   document.form.coordenadas.value = String(puntos);
 					}
   			}
@@ -70,6 +72,7 @@ return patron.test(tecla_valor);
 	<li><a href="http://www.ampicolima.com.mx/admin/archivos/vso_redimensionar.exe">Baja aqui software redimenicionar</a></li>
 </ul>
 </div>
+<div class="formAgregar">
 <form name="form" method="post" action="api/editProperty.php" enctype="multipart/form-data">
 <?php
 $estados= consultar("SELECT * FROM estados");
@@ -159,15 +162,15 @@ echo "</select></p>";
 <option value ="Departamento">Departamento</option>
 <option value ="Hotel">Hotel</option>
 </select></p>
-<p>Fecha inicio de disponibilidad<input type="text" name="finicio" id="datePicker" value="<?php echo $propiedad['0']['FInicio'];?>"><p>
-<p>Fecha final de disponibilidad<input type="text" name="ffin" id="datePicker" value="<?php echo $propiedad['0']['FFin'];?>"><p>
+<p>Fecha inicio de disponibilidad: <input type="text" name="finicio" id="datePicker"><p>
+<p>Fecha final de disponibilidad: <input type="text" name="ffin" id="datePicker"><p>
 <p>Imagen 1: <input type="file" name="foto1" accept='image/jpeg, image/bmp' value="">
 <p>Imagen 2: <input type="file" name="foto2" accept='image/jpeg, image/bmp' value="">
 <p>Imagen 3: <input type="file" name="foto3" accept='image/jpeg, image/bmp' value="">
 <p>Imagen 4: <input type="file" name="foto4" accept='image/jpeg, image/bmp' value="">
 <p>Imagen 5: <input type="file" name="foto5" accept='image/jpeg, image/bmp' value="">
 <p>Imagen 6: <input type="file" name="foto6" accept='image/jpeg, image/bmp' value="">
-<p>Descripción: <textarea name="descripcion"rows="10" maxlength="500"><?php echo $propiedad['0']['Descripcion'];?></textarea>
+<p>Descripción: <textarea id ="descripcion" name="descripcion"rows="10" maxlength="500"><?php echo $propiedad['0']['Descripcion'];?></textarea>
 <p>Coordenadas: <input type="text" name="coordenadas" readonly="readonly" style="width: 150px;" value ="<?php echo $propiedad['0']['Coordenadas'];?>"/></p>
 <div id="map" style="width: 600px; height: 400px; position: relative; background-color: rgb(229, 227, 223);">
 </div>

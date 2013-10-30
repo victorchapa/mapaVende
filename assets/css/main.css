@@ -70,3 +70,18 @@
   margin-left: 18%;
   height: 500px;
 }
+
+.formAgregar {
+  width: 600px;
+  padding-left: 10px;
+  background: #fcfcfc repeat-x left bottom;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #bbb;
+  border-top: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.formAgregar #descripcion {
+  width: 400px;
+  resize: none;
+}
