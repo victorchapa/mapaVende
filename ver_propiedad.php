@@ -8,9 +8,10 @@
 <html>
 	<head>
     	<meta charset="utf-8">
+    	<link rel="stylesheet" href="assets/css/main.css">
+    	<link rel="stylesheet" href="assets/css/normalize.css">
 	</head>
 	<body>
-	<h1>Detalles de la propiedad</h1>
 	<div>
 	<ul>
 		<li><a href="lista_propiedades.php">Inmuebles</a></li>
@@ -18,7 +19,9 @@
 		<li><a href="exit.php">Salir</a></li>
 	</ul>
 	</div>
-	<div>
+	<div class="propertyContainer">
+		<div class="property">
+	<h1>Detalles de la propiedad</h1>
 	<?php
 		echo "<input type= 'text' hidden='true' name='id_propiedad' value='".$propiedad['0']['IdPropiedad']."'>";
 		echo "<p>Dirección: ".$propiedad['0']['Direccion']."</p>";
@@ -47,6 +50,7 @@
 			echo "<a href='api/".$propiedad['0']['Foto6']."'><img src='api/".$propiedad['0']['Foto6']."'width='150' height='150'></a>";
 		}
 	?>
+		</div>
 	</div>
 	</body>
 </html>

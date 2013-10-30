@@ -97,3 +97,14 @@ span.bold {
   width: 400px;
   resize: none;
 }
+
+.propertyContainer {
+  width: 920px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin:0 auto 0 auto;
+}
+
+.property{
+  margin: 10px;
+}
