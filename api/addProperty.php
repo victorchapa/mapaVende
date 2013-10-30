@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	include("seguridad.php");
 	include("consultas.php");
 	require("dbConfig.php");
@@ -101,7 +101,7 @@
 	$conexion =  mysql_connect($serverAddress, $user, $passwd);
 	mysql_select_db($dbName);
 	mysql_query("UPDATE propiedades SET Foto1='$foto1', Foto2='$foto2', Foto3='$foto3', Foto4='$foto4', Foto5='$foto5', Foto6='$foto6' WHERE IdPropiedad='$id'");
-	//echo "<script> alert(\"Agregado exitosamente\"); </script>";
-	//echo "<script type=text/javascript>window.location.href=\"../lista_propiedades.php\";</script>";
+	echo "<script> alert(\"Agregado exitosamente\"); </script>";
+	echo "<script type=text/javascript>window.location.href=\"../lista_propiedades.php\";</script>";
 ?>
 </html> 

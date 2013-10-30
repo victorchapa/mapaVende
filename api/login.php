@@ -14,18 +14,17 @@
         if($row["Clave"] == $clave){
 			session_start();
             $_SESSION["username"] = $row['Usuario'];
+            $_SESSION["ultimoAcceso"]= date("Y-n-j H:i:s");
 			$_SESSION["autentica"] = "SI";
-            echo "<script type=text/javascript>window.location.href=\"index.php\";</script>";
-        }else{
+            echo "<script type=text/javascript>window.location.href=\"../index.php\";</script>";
+        } else{
             echo "<script> alert(\"La contraseña no es correcta\"); </script>";
-			echo "<script type=text/javascript>window.location.href=\"autenticar.php\";</script>";
+			echo "<script type=text/javascript>window.location.href=\"../autenticar.php\";</script>";
         }
-    }else{
+    } else{
         echo "<script> alert(\"El nombre de usuario no es correcto\"); </script>";
-		echo "<script type=text/javascript>window.location.href=\"autenticar.php\";</script>";
+		echo "<script type=text/javascript>window.location.href=\"../autenticar.php\";</script>";
     }
-    mysql_free_result($result);
-	mysql_close();
 	?>
 </body>
 </html>

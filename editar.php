@@ -1,5 +1,5 @@
 ﻿<?php 
-include ("api/seguridad.php");
+include ("api/security.php");
 include ("api/consultas.php");
 $id_propiedad = $_GET["id"];
 $propiedad = consultar("SELECT * FROM propiedades WHERE IdPropiedad= $id_propiedad");
@@ -61,7 +61,7 @@ return patron.test(tecla_valor);
 <ul>
 	<li><a href="lista_propiedades.php">Inmuebles</a></li>
 	<li><a href="mis_movimientos.php">Mis movimientos</a></li>
-	<li><a href="salir.php">Salir</a></li>
+	<li><a href="exit.php">Salir</a></li>
 </ul>
 <div>
 <ul>

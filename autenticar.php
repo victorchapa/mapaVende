@@ -8,7 +8,7 @@ Bienvenido al sistema
 <head>
 <body>
 <h1>Inicio de sesión</h1>
-<form method="POST" action="login.php">
+<form method="POST" action="api/login.php">
 Usuario <input type="text" name="usuario"/><br/>
 Password <input type="password" name="clave"><br/>
 <input type="submit" value="Ingresar"/><br/>

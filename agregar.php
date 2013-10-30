@@ -1,5 +1,5 @@
 <?php
-  include("api/seguridad.php");
+  include("api/security.php");
   include("api/consultas.php");
   $today = date("d/m/Y"); ?>
 <!DOCTYPE html>
@@ -58,7 +58,7 @@
 <ul>
 	<li><a href="lista_propiedades.php">Inmuebles</a></li>
 	<li><a href="mis_movimientos.php">Mis movimientos</a></li>
-	<li><a href="salir.php">Salir</a></li>
+	<li><a href="api/exit.php">Salir</a></li>
 </ul>
 <ul>
 	<li><a href="http://vimeo.com/15888243">Video tutorial agregar propiedad</a></li>
