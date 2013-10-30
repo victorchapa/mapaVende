@@ -7,5 +7,6 @@ MapaIn.Router = Backbone.Router.extend({
     
     index: function(){
         var loginView = new LoginView();
+        var indexViwe = new IndexView();
     },
 });
