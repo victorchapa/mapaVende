@@ -1,7 +1,7 @@
 <?php
   include("api/security.php");
   include("api/consultas.php");
-  $today = date("d/m/Y"); ?>
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -153,8 +153,8 @@ echo "</select></p>";
 <option value ="Departamento">Departamento</option>
 <option value ="Hotel">Hotel</option>
 </select></p>
-<p>Fecha inicio de disponibilidad<input type="text" name="finicio" value="<?php echo $today;?>"><p>
-<p>Fecha final de disponibilidad<input type="text" name="ffin" value="<?php echo $today;?>"><p>
+<p>Fecha inicio de disponibilidad<input type="text" id="datePicker" name="finicio">"><p>
+<p>Fecha final de disponibilidad<input type="text" id="datePicker" name="ffin">"><p>
 <p>Imagen 1: <input type="file" name="foto1" accept='image/jpeg, image/bmp'>
 <p>Imagen 2: <input type="file" name="foto2" accept='image/jpeg, image/bmp'>
 <p>Imagen 3: <input type="file" name="foto3" accept='image/jpeg, image/bmp'>

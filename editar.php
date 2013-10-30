@@ -159,8 +159,8 @@ echo "</select></p>";
 <option value ="Departamento">Departamento</option>
 <option value ="Hotel">Hotel</option>
 </select></p>
-<p>Fecha inicio de disponibilidad<input type="text" name="finicio" value="<?php echo $propiedad['0']['FInicio'];?>"><p>
-<p>Fecha final de disponibilidad<input type="text" name="ffin" value="<?php echo $propiedad['0']['FFin'];?>"><p>
+<p>Fecha inicio de disponibilidad<input type="text" name="finicio" id="datePicker" value="<?php echo $propiedad['0']['FInicio'];?>"><p>
+<p>Fecha final de disponibilidad<input type="text" name="ffin" id="datePicker" value="<?php echo $propiedad['0']['FFin'];?>"><p>
 <p>Imagen 1: <input type="file" name="foto1" accept='image/jpeg, image/bmp' value="">
 <p>Imagen 2: <input type="file" name="foto2" accept='image/jpeg, image/bmp' value="">
 <p>Imagen 3: <input type="file" name="foto3" accept='image/jpeg, image/bmp' value="">
