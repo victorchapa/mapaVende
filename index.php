@@ -46,6 +46,8 @@
     <footer></footer>
     <!-- Scripting -->
     <script src="assets/js/mapaCustomaizer.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/router.js"></script>
     <!-- Templates -->
     <!-- Collections -->
     <!-- Models -->
