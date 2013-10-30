@@ -14,6 +14,10 @@
   
 }
 
+.brandLogin {
+  cursor: pointer;
+}
+
 .loginField p, .loginField form {
   display: inline-block;
 }
@@ -55,6 +59,14 @@
 .loginAs ul li a {
   color: orange;
   text-decoration: none;
+}
+
+.loginAs p {
+  color: orange;
+}
+
+span.bold {
+  font-weight: bold;
 }
 
 #filters {
