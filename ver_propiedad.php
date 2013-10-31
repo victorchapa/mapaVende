@@ -1,5 +1,4 @@
 <?php
-	include("api/security.php");
 	include ("api/consultas.php");
 	$id_propiedad = $_GET["id"];
 	$propiedad = consultar("SELECT * FROM propiedades WHERE IdPropiedad= $id_propiedad");
