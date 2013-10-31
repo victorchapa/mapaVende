@@ -13,7 +13,7 @@ function placeMarker(position, mapTable, markerSaver){
 
 function mapApplication(){
 
-    // Bugger for get coordenates of googlemaps and fix bad street view markers.
+    // Bugger to get coordinates from googlemaps and fix wrong street view markers.
     var markerSaver = [];
     google.maps.event.addListener(mapTable.map, 'click', function(e){
         if(markerSaver.length == 1){
