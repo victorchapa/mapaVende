@@ -82,3 +82,7 @@ span.bold {
   margin-left: 18%;
   height: 500px;
 }
+
+.imgInfo img {
+  width: 150px;
+}
