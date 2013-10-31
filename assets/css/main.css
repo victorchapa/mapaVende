@@ -83,6 +83,10 @@ span.bold {
   height: 500px;
 }
 
+.imgInfo img {
+  width: 150px;
+}
+
 .formAgregar {
   width: 600px;
   padding-left: 10px;
