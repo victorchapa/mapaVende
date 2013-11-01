@@ -1,5 +1,5 @@
 <?php
-	include("seguridad.php");
+	include("security.php");
 	include("consultas.php");
 	require("dbConfig.php");
 ?>
@@ -23,7 +23,8 @@
 	$cochera = $_POST['cochera'];
 	$cuarto = $_POST['cuarto'];
 	$bath = $_POST['bath'];
-	$toperacion = $_POST['toperacion'];
+  $toperacion = $_POST['toperacion'];
+  $antiguedad = $_POST['antiguedad'];
 	$tpropiedad = $_POST['tpropiedad'];
 	$finicio = $_POST['finicio'];
 	$ffin = $_POST['ffin'];
@@ -38,8 +39,8 @@
 	$conexion =  mysql_connect($serverAddress, $user, $passwd);
 	mysql_select_db($dbName);
 	mysql_query ("SET NAMES 'utf8'");
-	mysql_query("INSERT INTO propiedades (Direccion, Colonia, Estado, Municipio, Construccion, Unidad1, Terreno, Unidad2, Precio, Moneda, Piso, Cochera, Cuarto, Bath, TOperacion, TPropiedad, FInicio, FFin, Descripcion, Coordenadas, Disponible) 
-	VALUES ('$direccion', '$colonia', '$estado', '$municipio', '$construccion', '$unidad1', '$terreno', '$unidad2', '$precio', '$moneda', '$piso', '$cochera', '$cuarto', '$bath', '$toperacion', '$tpropiedad', '$finicio', '$ffin', '$descripcion', '$coordenadas', '$disponible')");
+	mysql_query("INSERT INTO propiedades (Direccion, Colonia, Estado, Municipio, Construccion, Unidad1, Terreno, Unidad2, Precio, Moneda, Piso, Cochera, Cuarto, Bath, TOperacion, Antiguedad, TPropiedad, FInicio, FFin, Descripcion, Coordenadas, Disponible) 
+	VALUES ('$direccion', '$colonia', '$estado', '$municipio', '$construccion', '$unidad1', '$terreno', '$unidad2', '$precio', '$moneda', '$piso', '$cochera', '$cuarto', '$bath', '$toperacion', '$antiguedad', '$tpropiedad', '$finicio', '$ffin', '$descripcion', '$coordenadas', '$disponible')");
 	$id= mysql_insert_id();
 	mkdir ("property/".$id);
 	$rutaServidor = "property/".$id;
