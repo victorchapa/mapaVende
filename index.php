@@ -48,6 +48,7 @@
     <script src="templates/filters.js"></script>
     <!-- Collections -->
     <script src="assets/js/app/collections/properties.js"></script>
+    <script src="assets/js/app/collections/prices.js"></script>
     <!-- Models -->
     <!-- Views -->
     <script src="assets/js/app/views/indexView.js"></script>

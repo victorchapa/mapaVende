@@ -2,13 +2,14 @@ TEMPLATES.filters =
     "<script type='text/template'>" +
         "<h2>Filtros</h2>" +
         "<p>Tipo de Operación:</p> " +
-            "<select name='TOperacion'>" +
+            "<select class='f1' name='TOperacion'>" +
+                "<option value='seleccionar'>Seleccione un opción</option>" +
                 "<option value='Venta'>Venta</option>" +
                 "<option value='Renta'>Renta</option>" +
                 "<option value='Traspaso'>Traspaso</option>" +
             "</select>" +
         "<p>Tipo de Propiedad:</p>" +
-            "<select name='TPropiedad'>" +
+            "<select class='f2' name='TPropiedad'>" +
                 "<option value='seleccionar'>Seleccione una unidad</option>" +
                 "<option value='Casa'>Casa</option>" +
                 "<option value='Terreno'>Terreno</option>" +
@@ -24,15 +25,17 @@ TEMPLATES.filters =
                 "<option value='Hotel'>Hotel</option>" +
             "</select>" +
         "<p>Antigüedad</p>" +
-            "<input type='radio' name='Antiguedad' value='Nueva'>Nueva " +
-            "<input type='radio' name='Antiguedad' value='Usada'>Usada " +
-            "<input type='radio' name='Antiguedad' value='Cualquiera'>Culaquiera " +
+            "<div class='f3'>" +
+                "<input type='radio' name='Antiguedad' value='Nueva'>Nueva " +
+                "<input type='radio' name='Antiguedad' value='Usada'>Usada " +
+                "<input type='radio' name='Antiguedad' value='Cualquiera'>Culaquiera " +
+            "</div>" +
         "<div class='precio'>" +
-            "<p>Precio: <input type='text' class='checkerSlider' id='priceChecker' readonly></p>" +
+            "<p>Precio: <input type='text' class='checkerSlider f4' id='priceChecker' readonly></p>" +
             "<div class='sliderP'></div>" +
         "</div>" +
         "<div class='habitaciones'>" +
-            "<p>Habitaciones: <input type='text' class='checkerSlider' id='habChecker' readonly></p>" +
+            "<p>Habitaciones: <input type='text' class='checkerSlider f4' id='habChecker' readonly></p>" +
             "<div class='sliderH'></div>" +
         "</div>" +
     "<script>";
