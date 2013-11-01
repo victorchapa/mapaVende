@@ -28,7 +28,7 @@ TEMPLATES.filters =
             "<div class='f3'>" +
                 "<input type='radio' name='Antiguedad' value='Nueva'>Nueva " +
                 "<input type='radio' name='Antiguedad' value='Usada'>Usada " +
-                "<input type='radio' name='Antiguedad' value='Cualquiera'>Culaquiera " +
+                "<input type='radio' name='Antiguedad' value='Cualquiera'>Cualquiera " +
             "</div>" +
         "<div class='precio'>" +
             "<p>Precio: <input type='text' class='checkerSlider' id='priceChecker' readonly></p>" +

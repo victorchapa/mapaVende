@@ -4,6 +4,7 @@ var FiltersView = Backbone.View.extend({
     events:{
         "click .f1"         : "filterBy1",
         "click .f2"         : "filterBy2",
+        "click .f3"         : "filterBy3",
         "mouseup .f4"       : "filterBy4",
         "mouseup .f5"       : "filterBy5",
     },
@@ -24,7 +25,6 @@ var FiltersView = Backbone.View.extend({
     },
 
     filterBy2: function(e){
-        console.log(allPropertiesMarkers);
         var value = $(".f2 option:selected").val();
         if(value != "seleccionar"){
             var trueValue = value;
@@ -36,6 +36,23 @@ var FiltersView = Backbone.View.extend({
                 }
             });
         }
+    },
+
+    filterBy3: function(e){
+        console.log(allPropertiesMarkers);
+        var selected = $(e.target).val();
+        console.log(selected);
+        _.each(allPropertiesMarkers, function(marker){
+            console.log(marker.antiguedad);
+            if(marker.antiguedad != selected){
+                marker.setVisible(false);
+            }else{
+                marker.setVisible(true);
+            }
+            if(selected == "Cualquiera"){
+                marker.setVisible(true);
+            }
+        });
     },
 
     filterBy4: function(e){
