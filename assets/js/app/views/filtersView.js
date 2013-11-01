@@ -10,7 +10,6 @@ var FiltersView = Backbone.View.extend({
     },
 
     filterBy1: function(e){
-        console.log(allPropertiesMarkers);
         var value = $(".f1 option:selected").val();
         if(value != "seleccionar"){
             var trueValue = value;
@@ -41,7 +40,6 @@ var FiltersView = Backbone.View.extend({
     filterBy3: function(e){
         var selected = $(e.target).val();
         _.each(allPropertiesMarkers, function(marker){
-            console.log(marker.antiguedad);
             if(marker.antiguedad != selected){
                 marker.setVisible(false);
             }else{
