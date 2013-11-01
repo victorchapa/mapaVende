@@ -16,5 +16,4 @@ $(function(){
 
     mapApplication();
 
-    $("#slider").slider();
 });

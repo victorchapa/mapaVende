@@ -26,8 +26,7 @@ function mapApplication(){
 }
 
 function drawingMarkers(data){
-    console.log(data);
-    var allPropertiesMarkers = new Array();
+    allPropertiesMarkers = new Array();
     var image = new google.maps.MarkerImage("assets/img/house_green.png");
 
     _.each(data, function(propertie){
@@ -39,7 +38,12 @@ function drawingMarkers(data){
             position: new google.maps.LatLng(coordenades[0], coordenades[1]),
             map: mapTable.map,
             idPropiedad: propertie.IdPropiedad,
-            icon: image
+            icon: image,
+            tOperacion: propertie.TOperacion,
+            tPropiedad: propertie.TPropiedad,
+            antiguedad: propertie.Antiguedad,
+            precio: propertie.Precio,
+            habitaciones: propertie.Cuarto,
         });
 
         allPropertiesMarkers.push(marker);
@@ -68,6 +72,4 @@ function drawingMarkers(data){
         });
 
     });
-
-    console.log(allPropertiesMarkers);
 }

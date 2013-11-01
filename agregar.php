@@ -141,6 +141,11 @@
       <option value ="Renta">Renta</option>
       <option value ="Traspaso">Traspaso</option>
       </select></p>
+      <p>Antigüedad: <select name="antiguedad">
+      <option value ="seleccionar">Seleccione la una opción</option>
+      <option value ="Nueva">Nueva</option>
+      <option value ="Usada">Usada</option>
+      </select></p>
       <p>Tipo de propiedad: <select name="tpropiedad">
       <option value ="seleccionar">Seleccione una unidad</option>
       <option value ="Casa">Casa</option>
