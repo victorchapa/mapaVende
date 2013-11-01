@@ -4,6 +4,7 @@ var FiltersView = Backbone.View.extend({
     events:{
         "click .f1"         : "filterBy1",
         "click .f2"         : "filterBy2",
+        "mouseup .f4"       : "filterBy4",
         "mouseup .f5"       : "filterBy5",
     },
 
@@ -35,6 +36,24 @@ var FiltersView = Backbone.View.extend({
                 }
             });
         }
+    },
+
+    filterBy4: function(e){
+        var rangoPrice = $("#priceChecker").val();
+        rangoPrice = rangoPrice.split(" - ");
+        var menorP = rangoPrice[0].split("$");
+        var mayorP = rangoPrice[1].split("$");
+        var menorPrice = parseFloat(menorP[1]); 
+        var mayorPrice = parseFloat(mayorP[1]); 
+        _.each(allPropertiesMarkers, function(marker){
+            var precio = parseFloat(marker.precio);
+            if((precio >= menorPrice) && (precio <= mayorPrice)){
+                marker.setVisible(true);
+            }else{
+                marker.setVisible(false);
+            }
+        });
+    
     },
 
     filterBy5: function(e){

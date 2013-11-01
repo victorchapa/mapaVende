@@ -77,7 +77,7 @@ span.bold {
   float: left;
 }
 
-.slider {
+.sliderP, .sliderH {
   width: 80%;
   margin-left: 20px;
 }
