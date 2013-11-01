@@ -13,13 +13,21 @@ var FiltersView = Backbone.View.extend({
         var value = $(".f1 option:selected").val();
         if(value != "seleccionar"){
             var trueValue = value;
-            _.each(allPropertiesMarkers, function(marker){
-                if(marker.tOperacion != trueValue){
-                    marker.setVisible(false);
-                }else{
-                    marker.setVisible(true);
-                }
-            });
+            if(value == "Todos"){
+                _.each(allPropertiesMarkers, function(marker){
+                    if(marker.tOperacion != undefined){
+                        marker.setVisible(true);
+                    }
+                });
+            }else{
+                _.each(allPropertiesMarkers, function(marker){
+                    if(marker.tOperacion != trueValue){
+                        marker.setVisible(false);
+                    }else{
+                        marker.setVisible(true);
+                    }
+                });
+            }
         }
     },
 
@@ -27,13 +35,21 @@ var FiltersView = Backbone.View.extend({
         var value = $(".f2 option:selected").val();
         if(value != "seleccionar"){
             var trueValue = value;
-            _.each(allPropertiesMarkers, function(marker){
-                if(marker.tPropiedad != trueValue){
-                    marker.setVisible(false);
-                }else{
-                    marker.setVisible(true);
-                }
-            });
+            if(value == "Todos"){
+                _.each(allPropertiesMarkers, function(marker){
+                    if(marker.tPropiedad != undefined){
+                        marker.setVisible(true);
+                    }
+                });
+            }else{
+                _.each(allPropertiesMarkers, function(marker){
+                    if(marker.tPropiedad != trueValue){
+                        marker.setVisible(false);
+                    }else{
+                        marker.setVisible(true);
+                    }
+                });
+            }
         }
     },
 
