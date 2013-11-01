@@ -72,9 +72,20 @@ span.bold {
 #filters {
   border: 1px solid black;
   width: 17%;
-  height: 150px;
+  height: 470px;
   margin-left: 0px;
   float: left;
+}
+
+.slider {
+  width: 80%;
+  margin-left: 20px;
+}
+
+.checkerSlider {
+  border: 0;
+  color: #f6931f;
+  font-weight: bold;
 }
 
 #mainContainer {
