@@ -49,6 +49,7 @@
     <!-- Collections -->
     <script src="assets/js/app/collections/properties.js"></script>
     <script src="assets/js/app/collections/prices.js"></script>
+    <script src="assets/js/app/collections/habitaciones.js"></script>
     <!-- Models -->
     <!-- Views -->
     <script src="assets/js/app/views/indexView.js"></script>

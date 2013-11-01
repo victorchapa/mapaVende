@@ -1,3 +1,3 @@
-var HabitacionesColleciton = Backbone.Collection.extend({
-    ulr: "api/collections/habitaciones.php",
+var HabitacionesCollection = Backbone.Collection.extend({
+    url: "api/collections/habitaciones.php",
 });
