@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-10-2013 a las 19:35:31
+-- Tiempo de generación: 01-11-2013 a las 22:38:34
 -- Versión del servidor: 5.6.12-log
 -- Versión de PHP: 5.4.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `mapavende`
 --
-CREATE DATABASE IF NOT EXISTS `mapavende` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `mapavende` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 USE `mapavende`;
 
 -- --------------------------------------------------------
@@ -1896,6 +1896,7 @@ CREATE TABLE IF NOT EXISTS `propiedades` (
   `Cuarto` varchar(10) NOT NULL,
   `Bath` varchar(10) NOT NULL,
   `TOperacion` varchar(10) NOT NULL,
+  `Antiguedad` varchar(20) NOT NULL,
   `TPropiedad` varchar(20) NOT NULL,
   `FInicio` varchar(10) NOT NULL,
   `FFin` varchar(10) NOT NULL,
@@ -1909,14 +1910,15 @@ CREATE TABLE IF NOT EXISTS `propiedades` (
   `Coordenadas` varchar(100) NOT NULL,
   `Disponible` varchar(2) NOT NULL,
   PRIMARY KEY (`IdPropiedad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `propiedades`
 --
 
-INSERT INTO `propiedades` (`IdPropiedad`, `Direccion`, `Colonia`, `Estado`, `Municipio`, `Construccion`, `Unidad1`, `Terreno`, `Unidad2`, `Precio`, `Moneda`, `Piso`, `Cochera`, `Cuarto`, `Bath`, `TOperacion`, `TPropiedad`, `FInicio`, `FFin`, `Foto1`, `Foto2`, `Foto3`, `Foto4`, `Foto5`, `Foto6`, `Descripcion`, `Coordenadas`, `Disponible`) VALUES
-(7, 'Dirección 1', 'Colonia 1', 'Colima', 'Villa De Álvarez', '12', 'M2', 14, 'M2', 123456, 'Pesos', 1, '1', '1', '1', 'Venta', 'Casa', '29/10/2013', '29/10/2015', 'property/7/img1.jpg', 'property/7/img2.jpg', 'property/7/img3.jpg', 'property/7/img4.jpg', 'property/7/img5.jpg', 'property/7/img6.jpg', 'Nueva de paquete', '19.2402,-103.7290', 'Si');
+INSERT INTO `propiedades` (`IdPropiedad`, `Direccion`, `Colonia`, `Estado`, `Municipio`, `Construccion`, `Unidad1`, `Terreno`, `Unidad2`, `Precio`, `Moneda`, `Piso`, `Cochera`, `Cuarto`, `Bath`, `TOperacion`, `Antiguedad`, `TPropiedad`, `FInicio`, `FFin`, `Foto1`, `Foto2`, `Foto3`, `Foto4`, `Foto5`, `Foto6`, `Descripcion`, `Coordenadas`, `Disponible`) VALUES
+(7, 'Dirección 1', 'Colonia 1', 'Colima', 'Villa De Álvarez', '12', 'M2', 14, 'M2', 123456, 'Pesos', 1, '1', '1', '1', 'Venta', 'Nueva', 'Casa', '29/10/2013', '29/10/2015', 'property/7/img1.jpg', 'property/7/img2.jpg', 'property/7/img3.jpg', 'property/7/img4.jpg', 'property/7/img5.jpg', 'property/7/img6.jpg', 'Nueva de paquete', '19.2402,-103.7290', 'Si'),
+(8, 'Conocido', 'Colonia', 'Colima', 'Colima', '1200', 'M2', 2000, 'M2', 214748, 'Pesos', 2, '1', '3', '2', 'Traspaso', 'Usada', 'Casa', 'Ahora', 'Ahora', 'property/8/img1.jpg', '', '', '', '', '', 'Lalalalalla', '19.243853,-103.727331', 'Si');
 
 -- --------------------------------------------------------
 
