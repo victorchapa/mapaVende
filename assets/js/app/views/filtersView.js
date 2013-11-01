@@ -39,9 +39,7 @@ var FiltersView = Backbone.View.extend({
     },
 
     filterBy3: function(e){
-        console.log(allPropertiesMarkers);
         var selected = $(e.target).val();
-        console.log(selected);
         _.each(allPropertiesMarkers, function(marker){
             console.log(marker.antiguedad);
             if(marker.antiguedad != selected){
