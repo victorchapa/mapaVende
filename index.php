@@ -33,8 +33,6 @@
       </div>
     </header>
     <aside id='filters'>
-      <h2>Filtros</h2>
-      <div id="slider"></div>
     </aside>
     <div id="mainContainer">
       <div id="mapDisplayer"></div>
@@ -47,12 +45,14 @@
     <script src="assets/js/templates.js"></script>
     <!-- Templates -->
     <script src="templates/loginAs.js"></script>
+    <script src="templates/filters.js"></script>
     <!-- Collections -->
     <script src="assets/js/app/collections/properties.js"></script>
     <!-- Models -->
     <!-- Views -->
     <script src="assets/js/app/views/indexView.js"></script>
     <script src="assets/js/app/views/loginView.js"></script>
+    <script src="assets/js/app/views/filtersView.js"></script>
 
   </body>
 </html>
