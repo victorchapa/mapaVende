@@ -16,7 +16,7 @@
             $_SESSION["username"] = $row['Usuario'];
             $_SESSION["ultimoAcceso"]= date("Y-n-j H:i:s");
 			$_SESSION["autentica"] = "SI";
-            echo "<script type=text/javascript>window.location.href=\"../index.php\";</script>";
+            echo "<script type=text/javascript>window.location.href=\"../lista_propiedades.php\";</script>";
         } else{
             echo "<script> alert(\"La contraseña no es correcta\"); </script>";
 			echo "<script type=text/javascript>window.location.href=\"../autenticar.php\";</script>";

@@ -11,13 +11,7 @@
     	<link rel="stylesheet" href="assets/css/normalize.css">
 	</head>
 	<body>
-	<div>
-	<ul>
-		<li><a href="lista_propiedades.php">Inmuebles</a></li>
-		<li><a href="mis_movimientos.php">Mis movimientos</a></li>
-		<li><a href="exit.php">Salir</a></li>
-	</ul>
-	</div>
+	<div class="logoContainer2"><img src="assets/img/mapaLogo.png"></div>
 	<div class="propertyContainer">
 		<div class="property">
 	<h1>Detalles de la propiedad</h1>
@@ -51,5 +45,14 @@
 	?>
 		</div>
 	</div>
+	<footer id="footer">
+      <img class="triangulesFooter" src="assets/img/triangules.png"> 
+      <div class="logosFooter">
+        <img src="assets/img/contactUs.png">
+        <img src="assets/img/ampiLogo.png">
+        <img src="assets/img/realtorLogo.png">
+      </div>
+      <div class="backgroundFooter"></div>
+    </footer>
 	</body>
 </html>
