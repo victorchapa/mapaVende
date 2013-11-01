@@ -31,11 +31,11 @@ TEMPLATES.filters =
                 "<input type='radio' name='Antiguedad' value='Cualquiera'>Culaquiera " +
             "</div>" +
         "<div class='precio'>" +
-            "<p>Precio: <input type='text' class='checkerSlider f4' id='priceChecker' readonly></p>" +
-            "<div class='sliderP'></div>" +
+            "<p>Precio: <input type='text' class='checkerSlider' id='priceChecker' readonly></p>" +
+            "<div class='sliderP f4'></div>" +
         "</div>" +
         "<div class='habitaciones'>" +
-            "<p>Habitaciones: <input type='text' class='checkerSlider f4' id='habChecker' readonly></p>" +
-            "<div class='sliderH'></div>" +
+            "<p>Habitaciones: <input type='text' class='checkerSlider' id='habChecker' readonly></p>" +
+            "<div class='sliderH f5'></div>" +
         "</div>" +
     "<script>";

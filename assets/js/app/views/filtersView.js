@@ -2,8 +2,9 @@ var FiltersView = Backbone.View.extend({
     el: "#filters",
 
     events:{
-        "click .f1"     : "filterBy1",
-        "click .f2"     : "filterBy2",
+        "click .f1"         : "filterBy1",
+        "click .f2"         : "filterBy2",
+        "mouseup .f5"       : "filterBy5",
     },
 
     filterBy1: function(e){
@@ -34,6 +35,21 @@ var FiltersView = Backbone.View.extend({
                 }
             });
         }
+    },
+
+    filterBy5: function(e){
+        var rangoHab = $("#habChecker").val();
+        rangoHab = rangoHab.split(" - ");
+        rangoHab[0] = parseFloat(rangoHab[0]);
+        rangoHab[1] = parseFloat(rangoHab[1]);
+        _.each(allPropertiesMarkers, function(marker){
+            var habitaciones = parseFloat(marker.habitaciones);
+            if((habitaciones >= rangoHab[0]) && (habitaciones <= rangoHab[1])){
+                marker.setVisible(true);
+            }else{
+                marker.setVisible(false);
+            }
+        });
     },
 
     initialize: function(){
