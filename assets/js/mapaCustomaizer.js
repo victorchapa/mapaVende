@@ -26,7 +26,6 @@ function mapApplication(){
 }
 
 function drawingMarkers(data){
-    console.log(data);
     var allPropertiesMarkers = new Array();
     var image = new google.maps.MarkerImage("assets/img/house_green.png");
 
@@ -68,6 +67,4 @@ function drawingMarkers(data){
         });
 
     });
-
-    console.log(allPropertiesMarkers);
 }
