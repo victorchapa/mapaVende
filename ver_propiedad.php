@@ -47,7 +47,7 @@
 	</div>
 	<footer id="footer">
       <img class="triangulesFooter" src="assets/img/triangules.png"> 
-      <div class="logosFooter">
+      <div class="logosFooter2">
         <img src="assets/img/contactUs.png">
         <img src="assets/img/ampiLogo.png">
         <img src="assets/img/realtorLogo.png">
