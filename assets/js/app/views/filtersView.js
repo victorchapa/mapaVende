@@ -2,11 +2,103 @@ var FiltersView = Backbone.View.extend({
     el: "#filters",
 
     events:{
-        "click .f1"         : "filterBy1",
-        "click .f2"         : "filterBy2",
-        "click .f3"         : "filterBy3",
+        "click .f1"         : "getValues",
+        "click .f2"         : "getValues",
+        "click .f3"         : "getValues",
         "mouseup .f4"       : "filterBy4",
         "mouseup .f5"       : "filterBy5",
+    },
+    
+    getValues: function(e){
+        var target = $(e.target).attr("class");
+        var valueF1 = $(".f1 option:selected").val();
+        var valueF2 = $(".f2 option:selected").val();
+        var valueF3 = $(".f3 input[type='radio']:checked").val();
+
+        var rangoPrice = $("#priceChecker").val();
+        rangoPrice = rangoPrice.split(" - ");
+        var menorP = rangoPrice[0].split("$");
+        var mayorP = rangoPrice[1].split("$");
+        var valueF4 = [parseFloat(menorP[1]), parseFloat(mayorP[1])];
+
+        var rangoHab = $("#habChecker").val();
+        rangoHab = rangoHab.split(" - ");
+        var valueF5 = [parseFloat(rangoHab[0]), parseFloat(rangoHab[1])];
+
+        this.validation(valueF1, valueF2, valueF3, valueF4, valueF5, target);
+    },
+
+    validation: function(valueF1, valueF2, valueF3, valueF4, valueF5, target){
+
+        console.log("-----");
+        console.log(valueF1);
+        console.log(valueF2);
+        console.log(valueF3);
+        console.log(valueF4);
+        console.log(valueF5);
+        if(target == "f1"){
+            console.log("Es el F1");
+            var firstSelectTag = valueF1;
+            var secondSelectTag = valueF2;
+        }else if(target == "f2"){
+            console.log("Es el F2");
+            var firstSelectTag = valueF2;
+            var secondSelectTag = valueF1;
+        } 
+        switch(firstSelectTag){
+            case "Todos" : 
+                if((secondSelectTag == "seleccionar") && (valueF3 == undefined)){
+                    console.log("Ninguno extra");
+                    console.log(firstSelectTag);
+                }else if((secondSelectTag != "seleccionar") && (valueF3 == undefined)){
+                    console.log("Seleccionar tbn F2");
+                    console.log(firstSelectTag);
+                    console.log(secondSelectTag);
+                }else if((secondSelectTag == "seleccionar") && (valueF3 != undefined)){
+                    console.log("Seleccionado tbn F3");
+                    console.log(firstSelectTag);
+                    console.log(valueF3);
+                }else if((secondSelectTag != "seleccionar") && (valueF3 != undefined)){
+                    console.log("Seleccionado F2 y F3");
+                    console.log(firstSelectTag);
+                    console.log(secondSelectTag);
+                    console.log(valueF3);
+                }
+                break;
+        }if((firstSelectTag != "Todos") && (firstSelectTag != "seleccionar") && (firstSelectTag != undefined)){
+            console.log("No es todos");
+            if((secondSelectTag != "seleccionar") && (valueF3 != undefined)){
+                console.log("No es todos y con F2 y F3");
+                console.log(firstSelectTag);
+                console.log(secondSelectTag);
+                console.log(valueF3);
+            }else if((secondSelectTag != "seleccionar") && (valueF3 == undefined)){
+                console.log("No es todos y con F2");
+                console.log(firstSelectTag);
+                console.log(secondSelectTag);
+            
+            }else if((secondSelectTag == "seleccionar") && (valueF3 != undefined)){
+                console.log("No es todos y con F3");
+                console.log(firstSelectTag);
+                console.log(valueF3);
+            }else{
+                console.log("Solo el.");
+                console.log(firstSelectTag);
+            }
+        }
+        if(firstSelectTag == undefined){
+            console.log("Selecciono solo el Radio");
+            if((valueF1 != "seleccionar") && (valueF2 != "seleccionar")){
+                console.log("Selecciono Radio y con F1 y F2"); 
+                console.log(valueF1);
+                console.log(valueF2);
+                console.log(valueF3);
+            }else{
+                console.log("Solo el.");
+                console.log(valueF3);
+            }
+        }
+     
     },
 
     filterBy1: function(e){
