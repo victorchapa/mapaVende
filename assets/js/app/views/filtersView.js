@@ -228,19 +228,37 @@ var FiltersView = Backbone.View.extend({
     
     },
 
-    filterByH: function(visibleMarkers){
+    filterByH: function(){
+
+        var valueF1 = $(".f1 option:selected").val();
+        var valueF2 = $(".f2 option:selected").val();
+        var valueF3 = $(".f3 input[type='radio']:checked").val();
+
         var rangoHab = $("#habChecker").val();
         rangoHab = rangoHab.split(" - ");
         rangoHab[0] = parseFloat(rangoHab[0]);
         rangoHab[1] = parseFloat(rangoHab[1]);
-        _.each(allPropertiesMarkers, function(marker){
-            var habitaciones = parseFloat(marker.habitaciones);
-            if((habitaciones >= rangoHab[0]) && (habitaciones <= rangoHab[1])){
-                marker.setVisible(true);
-            }else{
-                marker.setVisible(false);
-            }
-        });
+
+        if(((valueF1 == "seleccionar") || (valueF1 == "Todos")) && ((valueF2 == "seleccionar") || (valueF2 == "Todos")) && ((valueF3 == undefined) || (valueF3 == "Cualquiera"))){
+            _.each(allPropertiesMarkers, function(marker){
+                var habitaciones = parseFloat(marker.habitaciones);
+                if((habitaciones >= rangoHab[0]) && (habitaciones <= rangoHab[1])){
+                    marker.setVisible(true);
+                }else{
+                    marker.setVisible(false);
+                }
+            }); 
+        }else{
+            console.log("No es Seleccionar o Todos");
+            _.each(visibleMarkers, function(marker){
+                var habitaciones = parseFloat(marker.habitaciones);
+                if((habitaciones >= rangoHab[0]) && (habitaciones <= rangoHab[1])){
+                    marker.setVisible(true);
+                }else{
+                    marker.setVisible(false);
+                }
+            });
+        }
     },
 
     filterBy1: function(e){
