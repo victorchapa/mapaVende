@@ -1,4 +1,5 @@
 var FiltersView = Backbone.View.extend({
+
     el: "#filters",
 
     events:{
@@ -69,6 +70,17 @@ var FiltersView = Backbone.View.extend({
                     console.log("Seleccionar tbn F2");
                     console.log(firstSelectTag);
                     console.log(secondSelectTag);
+                    _.each(allPropertiesMarkers, function(marker){
+                        if(((marker.tOperacion != undefined) || (marker.tOperacion != undefined)) && ((marker.tPropiedad != undefined)|| (marker.tPropiedad != undefined))){
+                            marker.setVisible(true);
+                            self.setNewRankP(marker.precio, false);
+                            self.setNewRankH(marker.habitaciones, false);
+                        }else{
+                            marker.setVisible(false);
+                        }
+                    });
+                    self.setNewRankP("", true);
+                    self.setNewRankH("", true);
                 }else if((secondSelectTag == "seleccionar") && (valueF3 != undefined)){
                     console.log("Seleccionado tbn F3");
                     console.log(firstSelectTag);
@@ -78,6 +90,27 @@ var FiltersView = Backbone.View.extend({
                     console.log(firstSelectTag);
                     console.log(secondSelectTag);
                     console.log(valueF3);
+                    _.each(allPropertiesMarkers, function(marker){
+                        if(valueF3 == "Cualquiera"){
+                            if(((marker.tOperacion != undefined) || (marker.tOperacion != undefined)) && ((marker.tPropiedad != undefined)|| (marker.tPropiedad != undefined)) && (marker.antiguedad != undefined)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        }else{
+                            if(((marker.tOperacion != undefined) || (marker.tOperacion != undefined)) && ((marker.tPropiedad != undefined)|| (marker.tPropiedad != undefined)) && (marker.antiguedad == valueF3)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        }
+                    });
+                    self.setNewRankP("", true);
+                    self.setNewRankH("", true);
                 }
                 break;
         }if((firstSelectTag != "Todos") && (firstSelectTag != "seleccionar") && (firstSelectTag != undefined)){
@@ -91,7 +124,28 @@ var FiltersView = Backbone.View.extend({
                 console.log("No es todos y con F2");
                 console.log(firstSelectTag);
                 console.log(secondSelectTag);
-            
+                _.each(allPropertiesMarkers, function(marker){
+                    console.log(marker);
+                    if(secondSelectTag == "Todos"){
+                        if((marker.tOperacion == firstSelectTag) || (marker.tPropiedad == firstSelectTag)){
+                            marker.setVisible(true);
+                            self.setNewRankP(marker.precio, false);
+                            self.setNewRankH(marker.habitaciones, false);
+                        }else{
+                            marker.setVisible(false);
+                        }
+                    }else{
+                        if(((marker.tOperacion == firstSelectTag) || (marker.tOperacion == secondSelectTag)) && ((marker.tPropiedad == firstSelectTag) || (marker.tPropiedad == secondSelectTag))){
+                            marker.setVisible(true);
+                            self.setNewRankP(marker.precio, false);
+                            self.setNewRankH(marker.habitaciones, false);
+                        }else{
+                            marker.setVisible(false);
+                        }
+                    }
+                });
+                self.setNewRankP("", true)
+                self.setNewRankH("", true)
             }else if((secondSelectTag == "seleccionar") && (valueF3 != undefined)){
                 console.log("No es todos y con F3");
                 console.log(firstSelectTag);
@@ -100,14 +154,13 @@ var FiltersView = Backbone.View.extend({
                 console.log("Solo el.");
                 console.log(firstSelectTag);
                 _.each(allPropertiesMarkers, function(marker){
-                    if(marker.tOperacion == firstSelectTag){
+                    if((marker.tOperacion == firstSelectTag) || (marker.tPropiedad == firstSelectTag)){
                         marker.setVisible(true);
                         self.setNewRankP(marker.precio, false);
                         self.setNewRankH(marker.habitaciones, false);
                     }else{
                         marker.setVisible(false);
                     }
-                    console.log(marker);
                 });
                 self.setNewRankP("", true)
                 self.setNewRankH("", true)
@@ -249,7 +302,7 @@ var FiltersView = Backbone.View.extend({
                 }
             }); 
         }else{
-            console.log("No es Seleccionar o Todos");
+            console.log("No es un seleccionar o Todos");
             _.each(visibleMarkers, function(marker){
                 var habitaciones = parseFloat(marker.habitaciones);
                 if((habitaciones >= rangoHab[0]) && (habitaciones <= rangoHab[1])){
