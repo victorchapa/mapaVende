@@ -2,11 +2,11 @@ var FiltersView = Backbone.View.extend({
     el: "#filters",
 
     events:{
-        "click .f1"         : "getValues",
-        "click .f2"         : "getValues",
-        "click .f3"         : "getValues",
-        "mouseup .f4"       : "filterByP",
-        "mouseup .f5"       : "filterByH",
+        "click .f1"                     : "getValues",
+        "click .f2"                     : "getValues",
+        "click .f3"                     : "getValues",
+        "mouseup .precio"               : "filterByP",
+        "mouseup .habitaciones"         : "filterByH",
     },
     
     getValues: function(e){
