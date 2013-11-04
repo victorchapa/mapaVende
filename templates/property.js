@@ -30,6 +30,7 @@ TEMPLATES.property =
             "<% if (property.Foto6 != ""){" +
             "print('<a href='api/'><img src='api' width='150' height='150'></a>')" +
             "} %>"+
+            "<a href ='contacto.php?id=<% property.IdPropiedad %>'>Contacto</a>" +
         "</div>" +
     "</div>" +
     "</script>";
