@@ -85,6 +85,27 @@ var FiltersView = Backbone.View.extend({
                     console.log("Seleccionado tbn F3");
                     console.log(firstSelectTag);
                     console.log(valueF3);
+                    _.each(allPropertiesMarkers, function(marker){
+                        if(valueF3 == "Cualquiera"){
+                            if(((marker.tOperacion != undefined) || (marker.tPropiedad != undefined)) && (marker.antiguedad != undefined)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        }else{
+                            if(((marker.tOperacion != undefined) || (marker.tPropiedad != undefined)) && (marker.antiguedad == valueF3)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        }
+                    });
+                    self.setNewRankP("", true);
+                    self.setNewRankH("", true);
                 }else if((secondSelectTag != "seleccionar") && (valueF3 != undefined)){
                     console.log("Seleccionado F2 y F3");
                     console.log(firstSelectTag);
@@ -92,7 +113,7 @@ var FiltersView = Backbone.View.extend({
                     console.log(valueF3);
                     _.each(allPropertiesMarkers, function(marker){
                         if(valueF3 == "Cualquiera"){
-                            if(((marker.tOperacion != undefined) || (marker.tOperacion != undefined)) && ((marker.tPropiedad != undefined)|| (marker.tPropiedad != undefined)) && (marker.antiguedad != undefined)){
+                            if((marker.tOperacion != undefined) && (marker.tPropiedad != undefined) && (marker.antiguedad != undefined)){
                                 marker.setVisible(true);
                                 self.setNewRankP(marker.precio, false);
                                 self.setNewRankH(marker.habitaciones, false);
@@ -120,6 +141,48 @@ var FiltersView = Backbone.View.extend({
                 console.log(firstSelectTag);
                 console.log(secondSelectTag);
                 console.log(valueF3);
+                _.each(allPropertiesMarkers, function(marker){
+                    if(secondSelectTag == "Todos"){
+                        if(valueF3 == "Cualquiera"){
+                            if((marker.tOperacion == firstSelectTag) || (marker.tPropiedad == firstSelectTag) && (marker.antiguedad != undefined)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+
+                        }else{
+                            if((marker.tOperacion == firstSelectTag) || (marker.tPropiedad == firstSelectTag) && (marker.antiguedad == valueF3)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        }
+                    }else{
+                        if(valueF3 != "Cualquiera"){
+                            if(((marker.tOperacion == firstSelectTag) || (marker.tOperacion == secondSelectTag)) && ((marker.tPropiedad == firstSelectTag) || (marker.tPropiedad == secondSelectTag)) && (marker.antiguedad == valueF3)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        }else{
+                            if(((marker.tOperacion == firstSelectTag) || (marker.tOperacion == secondSelectTag)) && ((marker.tPropiedad == firstSelectTag) || (marker.tPropiedad == secondSelectTag)) && (marker.antiguedad != undefined)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        }
+                    }
+                });
+                self.setNewRankP("", true);
+                self.setNewRankH("", true);
             }else if((secondSelectTag != "seleccionar") && (valueF3 == undefined)){
                 console.log("No es todos y con F2");
                 console.log(firstSelectTag);
@@ -144,12 +207,31 @@ var FiltersView = Backbone.View.extend({
                         }
                     }
                 });
-                self.setNewRankP("", true)
-                self.setNewRankH("", true)
+                self.setNewRankP("", true);
+                self.setNewRankH("", true);
             }else if((secondSelectTag == "seleccionar") && (valueF3 != undefined)){
                 console.log("No es todos y con F3");
                 console.log(firstSelectTag);
                 console.log(valueF3);
+                _.each(allPropertiesMarkers, function(marker){
+                    if(valueF3 == "Cualquiera"){
+                        if(((marker.tOperacion == firstSelectTag) || (marker.tPropiedad == firstSelectTag)) && (valueF3 != undefined)){
+                            marker.setVisible(true);
+                            self.setNewRankP(marker.precio, false);
+                            self.setNewRankH(marker.habitaciones, false);
+                        }else{
+                            marker.setVisible(false);
+                        }
+                    }else{
+                        if(((marker.tOperacion == firstSelectTag) || (marker.tPropiedad == firstSelectTag)) && (marker.antiguedad == valueF3)){
+                            marker.setVisible(true);
+                            self.setNewRankP(marker.precio, false);
+                            self.setNewRankH(marker.habitaciones, false);
+                        }else{
+                            marker.setVisible(false);
+                        }
+                    }
+                });
             }else{
                 console.log("Solo el.");
                 console.log(firstSelectTag);
@@ -162,8 +244,8 @@ var FiltersView = Backbone.View.extend({
                         marker.setVisible(false);
                     }
                 });
-                self.setNewRankP("", true)
-                self.setNewRankH("", true)
+                self.setNewRankP("", true);
+                self.setNewRankH("", true);
             }
         }
         if(firstSelectTag == undefined){
