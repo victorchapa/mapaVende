@@ -23,7 +23,7 @@
 			<p>Teléfono (*)</p>
 			<input type="text" name="telefono"/>
 			<p>E-mail (*)</p>
-			<input type="email" name="correo" />
+			<input type="email" name="correo" placeholder="example@example.com"/>
 			<p class="comentario">Comentarios (*)</p>
 			<textarea name="comentario" rows="5"></textarea>
 			<p><input type="submit" class="btn-details btn-disabled btnenviar" value="Enviar" disabled/>
