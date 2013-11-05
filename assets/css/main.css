@@ -231,6 +231,13 @@ span.bold {
   border-radius: 5px;
 }
 
-.contacto textarea{
+.contacto textarea, input[type="text"], input[type="email"] {
   width: 325px;
+}
+
+.contacto input[type="submit"] {
+  margin-right: 18px;
+}
+.contacto #botonContacto{
+  text-align: right;
 }

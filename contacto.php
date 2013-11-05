@@ -23,7 +23,7 @@
 			<input type="email" name="correo" />
 			<p class="comentario">Comentarios</p>
 			<textarea name="comentario" style="resize:none;" rows="5"></textarea>
-			<p><input type="submit" class="btnenviar" value="Enviar"/>
+			<p id="botonContacto"><input type="submit" class="btnenviar" value="Enviar"/>
 		</form>
 	</div>
 	<footer id="footer">
