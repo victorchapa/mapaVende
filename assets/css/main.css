@@ -228,7 +228,7 @@ span.bold {
   border-radius: 5px;
 }
 
-.contacto textarea, input[type="text"], input[type="email"] {
+.contacto textarea, .contacto input[type="text"], .contacto input[type="email"] {
   width: 325px;
 }
 
