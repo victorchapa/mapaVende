@@ -232,6 +232,10 @@ span.bold {
   width: 325px;
 }
 
+.contacto textarea{
+  resize: none;
+}
+
 .contacto input[type="submit"] {
   margin-right: 18px;
 }
