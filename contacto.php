@@ -26,7 +26,7 @@
 			<input type="email" name="correo" placeholder="example@example.com"/>
 			<p class="comentario">Comentarios (*)</p>
 			<textarea name="comentario" rows="5"></textarea>
-			<p><input type="submit" class="btn-details btn-disabled btnenviar" value="Enviar" disabled/>
+			<p id="botonContacto"><input type="submit" class="btn-details btn-disabled btnenviar" value="Enviar" disabled/>
 		</form>
 	</div>
 	<footer id="footer">
