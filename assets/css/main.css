@@ -9,6 +9,14 @@ header {
   margin: 0 auto;
 }
 
+.logoContainer2 {
+  position: absolute;
+}
+.logoContainer2 img {
+  width: 215px;
+  height: 130px;
+}
+
 .loginField {
   position: absolute;
   z-index: 2;
@@ -200,5 +208,16 @@ span.bold {
 }
 
 .logosFooter img {
+  margin-right: 5px;
+}
+
+.logosFooter2 {
+  float: right;
+  margin-top: 5px;
+}
+.logosFooter2 img {
+  margin-right: 5px;
+  height: 70px;
+  margin-top: 50px;
   margin-right: 5px;
 }

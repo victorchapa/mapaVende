@@ -1,38 +1,17 @@
-<?php
-	include ("api/consultas.php");
-	$id_propiedad = $_GET["id"];
-	$propiedad = consultar("SELECT * FROM propiedades WHERE IdPropiedad= $id_propiedad");
-?>
-<!DOCTYPE html>
-<html>
-	<head>
-    	<meta charset="utf-8">
-    	<link rel="stylesheet" href="assets/css/main.css">
-    	<link rel="stylesheet" href="assets/css/normalize.css">
-	</head>
-	<body>
-	<div>
-	<ul>
-		<li><a href="lista_propiedades.php">Inmuebles</a></li>
-		<li><a href="mis_movimientos.php">Mis movimientos</a></li>
-		<li><a href="exit.php">Salir</a></li>
-	</ul>
-	</div>
 	<div class="propertyContainer">
 		<div class="property">
-	<h1>Detalles de la propiedad</h1>
-	<?php
-		echo "<input type= 'text' hidden='true' name='id_propiedad' value='".$propiedad['0']['IdPropiedad']."'>";
-		echo "<p>Dirección: ".$propiedad['0']['Direccion']."</p>";
-		echo "<p>Colonia: ".$propiedad['0']['Colonia']."</p>";
-		echo "<p>Estado: ".$propiedad['0']['Estado']."</p>";
-		echo "<p>Municipio: ".$propiedad['0']['Municipio']."</p>";
-		echo "<p>Tamaño de la construcción: ".$propiedad['0']['Construccion']." ".$propiedad['0']['Unidad1']."</p>";
-		echo "<p>Tamaño del terreno: ".$propiedad['0']['Terreno']." ".$propiedad['0']['Unidad2']."</p>";
-		echo "<p>Fecha de inicio: ".$propiedad['0']['FInicio']."</p>";
-		echo "<p>Fecha de cierre: ".$propiedad['0']['FFin']."</p>";
-		echo "<p>Descripción: ".$propiedad['0']['Descripcion']."</p>";
-		echo "<a href='api/".$propiedad['0']['Foto1']."'><img src='api/".$propiedad['0']['Foto1']."'width='150' height='150'></a>";
+		<h1>Detalles de la propiedad</h1>
+		"<input type= 'text' hidden='true' name='id_propiedad' value='".$propiedad['0']['IdPropiedad']."'>";
+		"<p>Dirección: ".$propiedad['0']['Direccion']."</p>";
+		"<p>Colonia: ".$propiedad['0']['Colonia']."</p>";
+		"<p>Estado: ".$propiedad['0']['Estado']."</p>";
+		"<p>Municipio: ".$propiedad['0']['Municipio']."</p>";
+		"<p>Tamaño de la construcción: ".$propiedad['0']['Construccion']." ".$propiedad['0']['Unidad1']."</p>";
+		"<p>Tamaño del terreno: ".$propiedad['0']['Terreno']." ".$propiedad['0']['Unidad2']."</p>";
+		"<p>Fecha de inicio: ".$propiedad['0']['FInicio']."</p>";
+		"<p>Fecha de cierre: ".$propiedad['0']['FFin']."</p>";
+		"<p>Descripción: ".$propiedad['0']['Descripcion']."</p>";
+		"<a href='api/".$propiedad['0']['Foto1']."'><img src='api/".$propiedad['0']['Foto1']."'width='150' height='150'></a>";
 		if ($propiedad['0']['Foto2'] != ""){
 			echo "<a href='api/".$propiedad['0']['Foto2']."'><img src='api/".$propiedad['0']['Foto2']."'width='150' height='150'></a>";
 		}
@@ -51,5 +30,14 @@
 	?>
 		</div>
 	</div>
+	<footer id="footer">
+      <img class="triangulesFooter" src="assets/img/triangules.png"> 
+      <div class="logosFooter2">
+        <img src="assets/img/contactUs.png">
+        <img src="assets/img/ampiLogo.png">
+        <img src="assets/img/realtorLogo.png">
+      </div>
+      <div class="backgroundFooter"></div>
+    </footer>
 	</body>
 </html>

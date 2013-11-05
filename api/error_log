@@ -1,0 +1,1 @@
+[01-Nov-2013 17:00:30] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home4/mapavend/public_html/mapavende/api/login.php:5) in /home4/mapavend/public_html/mapavende/api/login.php on line 15
