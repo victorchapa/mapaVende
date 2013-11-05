@@ -52,7 +52,7 @@ header {
   text-align: center;
 }
 
-#loginForm input[type="submit"] {
+#loginForm input[type="submit"], .btn-default {
   background: #FF8000;
   border-color: #DF7401;
   color: #F2F2F2;
@@ -175,10 +175,7 @@ span.bold {
 }
 
 .propertyContainer {
-  width: 920px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin:0 auto 0 auto;
+
 }
 
 .property{
@@ -220,4 +217,41 @@ span.bold {
   height: 70px;
   margin-top: 50px;
   margin-right: 5px;
+}
+
+.modal-dialog {
+  width: 535px;
+}
+
+.modal-title {
+  color: #08088A;
+} 
+
+.toContactForm {
+  float: right;
+}
+
+.btn-details {
+  background: #0404B4;
+  border-color: #08088A;
+  color: #F2F2F2;
+  font-weight: bold;
+}
+
+.mainImage {
+  float: right;
+  border: 2px solid silver;
+}
+
+.showMorePhotos {
+  cursor: pointer;
+  color: blue;
+}
+
+.showMorePhotos:hover {
+  text-decoration: underline;
+}
+
+.imgGroup {
+  display: none;
 }
