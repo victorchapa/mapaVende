@@ -48,20 +48,35 @@ function drawingMarkers(data){
 
         allPropertiesMarkers.push(marker);
 
-        var contentString = '<div class="infoArea">'+
-        '<div class="imgInfo">' +
-        '<img src="api/'+ propertie.Foto1 + '">' +
-        '</div>' +
-        '</div>' +
-        '<div class="infoData">'+
-        '<p>Precio: $'+ propertie.Precio + " (" + propertie.TOperacion + ")</p>"+
-        '</div>'+
-        '<div class="interacition">'+
-        '<a href="ver_propiedad.php?id=' + propertie.IdPropiedad + '">' +
-        '<input class="btn btn-default moreDetails" type="button" value="Más detalles">'+
-        '</a>' +
-        '</div>'+
-        '</div>';
+        if(propertie.Foto1 != ""){
+            var contentString = '<div class="infoArea">'+
+            '<div class="imgInfo">' +
+            '<img src="api/'+ propertie.Foto1 + '">' +
+            '</div>' +
+            '</div>' +
+            '<div class="infoData">'+
+            '<p>Precio: $'+ propertie.Precio + " (" + propertie.TOperacion + ")</p>"+
+            '</div>'+
+            '<div class="interaction">'+
+            '<input class="idProperty" type="hidden" value="'+ propertie.IdPropiedad+'">' +
+            '<input class="btn btn-details moreDetails" type="button" value="Más detalles">'+
+            '</div>'+
+            '</div>';
+        }else{
+            var contentString = '<div class="infoArea">'+
+            '<div class="imgInfo">' +
+            '<img src="assets/img/noPhoto.png">' +
+            '</div>' +
+            '</div>' +
+            '<div class="infoData">'+
+            '<p>Precio: $'+ propertie.Precio + " (" + propertie.TOperacion + ")</p>"+
+            '</div>'+
+            '<div class="interaction">'+
+            '<input class="idProperty" type="hidden" value="'+ propertie.IdPropiedad+'">' +
+            '<input class="btn btn-details moreDetails" type="button" value="Más detalles">'+
+            '</div>'+
+            '</div>';
+        }
 
         var markerInfo = new google.maps.InfoWindow({
             content: contentString,
@@ -69,6 +84,28 @@ function drawingMarkers(data){
 
         google.maps.event.addListener(marker, "click", function(){
             markerInfo.open(marker.get('map'), marker);
+        });
+        
+        google.maps.event.addListener(markerInfo, "domready", function(){
+
+            var template = TEMPLATES.property;
+            var compilatedTemplate = _.template($(template).html());
+            var id = $(".idProperty").val();
+            var propertyModel = new PropertyModel(id);
+            propertyModel.fetch({
+                success: function(data){
+                    var data = data.toJSON();
+                    var property = {property: data[0]};
+                    $("#modalDisplayer").html(compilatedTemplate(property));
+                },
+            });
+            $(".moreDetails").on("click", function(){
+                $("#Modal").modal("show");
+                $(".showMorePhotos").on("click", function(){
+                    $(".imgGroup").show("slow");
+                });
+            });
+
         });
 
     });
