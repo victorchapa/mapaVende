@@ -15,11 +15,11 @@
 	$colonia = $propiedad["0"]["Colonia"];
 	$estado = $propiedad["0"]["Estado"];
 	$municipio = $propiedad["0"]["Municipio"];
-	$sendTo = "isracortes62@gmail.com";
+	$sendTo = "apreza@gmail.com";
 	$subject = "Mapavende";
 	$headers = "Content-type: text/html\r\n";
 	$headers .= "From: ".$mail."\r\n";
-	$headers .= "Bcc: isr62@hotmail.com;\r\n";
+	$headers .= "Bcc: apreza@mapavende.com;\r\n";
 	$message = ' <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><head> 
 	<title>Contacto Mapavende</title>
@@ -29,11 +29,13 @@
 	<p>Teléfono del cliente: '.$tel.'</p>
 	<p>El cliente ha comentado: '.$comentario.'</p>
 	<h3>Detalles de la propiedad</h3>
-	<p>Id '.$id.'</p>
-	<p>Dirección '.$direccion.'</p>
-	<p>Colonia '.$colonia.'</p>
+	<p>Id: '.$id.'</p>
+	<p>Dirección: '.$direccion.'</p>
+	<p>Colonia: '.$colonia.'</p>
 	<p>Estado/ Municipio: '.$estado.'/'.$municipio.'</p>
 	</body>
 	</html>';
 	mail($sendTo, $subject, $message, $headers);
+	echo "<script> alert(\"Se ha enviado un correo a la inmobiliaria\"); </script>";
+	echo "<script type=text/javascript>window.location.href=\"../index.php\";</script>";
 ?>
