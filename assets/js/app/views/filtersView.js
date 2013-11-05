@@ -255,9 +255,121 @@ var FiltersView = Backbone.View.extend({
                 console.log(valueF1);
                 console.log(valueF2);
                 console.log(valueF3);
+                if(valueF3 != "Cualquiera"){
+                    if((valueF1 != "Todos") && (valueF2 != "Todos")){
+                        _.each(allPropertiesMarkers, function(marker){
+                            if((marker.tOperacion == valueF1) && (marker.tPropiedad == valueF2) && (marker.antiguedad == valueF3)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        });
+                    }else if((valueF1 == "Todos") && (valueF2 != "Todos")){
+                        _.each(allPropertiesMarkers, function(marker){
+                            if((marker.tOperacion != undefined) && (marker.tPropiedad == valueF2) && (marker.antiguedad == valueF3)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        });
+                    }else if((valueF1 != "Todos") && (valueF2 == "Todos")){
+                        _.each(allPropertiesMarkers, function(marker){
+                            if((marker.tOperacion == valueF1) && (marker.tPropiedad != undefined) && (marker.antiguedad == valueF3)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        });
+                    }else if((valueF1 == "Todos") && (valueF2 == "Todos")){
+                        console.log("CACA");
+                        _.each(allPropertiesMarkers, function(marker){
+                            if((marker.tOperacion != undefined) && (marker.tPropiedad != undefined) && (marker.antiguedad == valueF3)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        });
+                    }
+                }else{
+                    if((valueF1 != "Todos") && (valueF2 != "Todos")){
+                        _.each(allPropertiesMarkers, function(marker){
+                            if((marker.tOperacion == valueF1) && (marker.tPropiedad == valueF2) && (marker.antiguedad != undefined)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        });
+                    }else if((valueF1 == "Todos") && (valueF2 != "Todos")){
+                        _.each(allPropertiesMarkers, function(marker){
+                            if((marker.tOperacion != undefined) && (marker.tPropiedad == valueF2) && (marker.antiguedad != undefined)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        });
+                    }else if((valueF1 != "Todos") && (valueF2 == "Todos")){
+                        _.each(allPropertiesMarkers, function(marker){
+                            if((marker.tOperacion == valueF1) && (marker.tPropiedad != undefined) && (marker.antiguedad != undefined)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        });
+                    }else if((valueF1 == "Todos") && (valueF2 == "Todos")){
+                        console.log("CACA");
+                        _.each(allPropertiesMarkers, function(marker){
+                            if((marker.tOperacion != undefined) && (marker.tPropiedad != undefined) && (marker.antiguedad != undefined)){
+                                marker.setVisible(true);
+                                self.setNewRankP(marker.precio, false);
+                                self.setNewRankH(marker.habitaciones, false);
+                            }else{
+                                marker.setVisible(false);
+                            }
+                        });
+                    }
+                }
+                self.setNewRankP("", true);
+                self.setNewRankH("", true);
             }else{
                 console.log("Solo el.");
                 console.log(valueF3);
+                if(valueF3 != "Cualquiera"){
+                    _.each(allPropertiesMarkers, function(marker){
+                        if(marker.antiguedad == valueF3){
+                            marker.setVisible(true); 
+                            self.setNewRankP(marker.precio, false);
+                            self.setNewRankH(marker.habitaciones, false);
+                        }else{
+                            marker.setVisible(false);
+                        }
+                    });
+                }else{
+                    _.each(allPropertiesMarkers, function(marker){
+                        if(marker.antiguedad != undefined){
+                            marker.setVisible(true); 
+                            self.setNewRankP(marker.precio, false);
+                            self.setNewRankH(marker.habitaciones, false);
+                        }else{
+                            marker.setVisible(false);
+                        }
+                    });
+                }
+                self.setNewRankP("", true);
+                self.setNewRankH("", true);
             }
         }
      
