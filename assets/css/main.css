@@ -268,3 +268,7 @@ span.bold {
 .imgGroup {
   display: none;
 }
+
+.btn-disabled {
+  opacity: .5;
+}
