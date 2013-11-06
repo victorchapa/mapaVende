@@ -418,6 +418,9 @@ var FiltersView = Backbone.View.extend({
     },
 
     filterByP: function(){
+        var self = this;
+        newRankP = [];
+        newRankH = [];
 
         var valueF1 = $(".f1 option:selected").val();
         var valueF2 = $(".f2 option:selected").val();
@@ -435,24 +438,31 @@ var FiltersView = Backbone.View.extend({
                 var precio = parseFloat(marker.precio);
                 if((precio >= menorPrice) && (precio <= mayorPrice)){
                     marker.setVisible(true);
+                    self.setNewRankH(marker.habitaciones, false);
                 }else{
                     marker.setVisible(false);
                 }
             });
+            self.setNewRankH("", true);
         }else{
             _.each(visibleMarkers, function(marker){
                 var precio = parseFloat(marker.precio);
                 if((precio >= menorPrice) && (precio <= mayorPrice)){
                     marker.setVisible(true);
+                    self.setNewRankH(marker.habitaciones, false);
                 }else{
                     marker.setVisible(false);
                 }
             });
+            self.setNewRankH("", true);
         }
     
     },
 
     filterByH: function(){
+        var self = this;
+        newRankP = [];
+        newRankH = [];
 
         var valueF1 = $(".f1 option:selected").val();
         var valueF2 = $(".f2 option:selected").val();
@@ -468,19 +478,23 @@ var FiltersView = Backbone.View.extend({
                 var habitaciones = parseFloat(marker.habitaciones);
                 if((habitaciones >= rangoHab[0]) && (habitaciones <= rangoHab[1])){
                     marker.setVisible(true);
+                    self.setNewRankP(marker.precio, false);
                 }else{
                     marker.setVisible(false);
                 }
-            }); 
+            });
+            self.setNewRankP("", true); 
         }else{
             _.each(visibleMarkers, function(marker){
                 var habitaciones = parseFloat(marker.habitaciones);
                 if((habitaciones >= rangoHab[0]) && (habitaciones <= rangoHab[1])){
                     marker.setVisible(true);
+                    self.setNewRankP(marker.precio, false);
                 }else{
                     marker.setVisible(false);
                 }
             });
+            self.setNewRankP("", true);
         }
     },
 
