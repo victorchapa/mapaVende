@@ -8,6 +8,7 @@ TEMPLATES.property =
                     "<input class='btn-default' type='button' value='Contacto'>" +
                 "</a>" +
             "</div>" +
+            "<p><span class='bold'>Tipo de propiedad:</span> <% print(property.TPropiedad); %></p>" +
             "<p><span class='bold'>Dirección:</span> <% print(property.Direccion); %></p>" +
             "<p><span class='bold'>Colonia:</span> <% print(property.Colonia); %></p>" +
             "<div class='mainImage'>" +
