@@ -354,15 +354,20 @@ var FiltersView = Backbone.View.extend({
             if(newRankP.length == 1){
                 this.renderSliderPrices(parseFloat(newRankP[0]), 1);
             }else if(newRankP.length >= 2){
-                var menor = parseFloat(newRankP[0]);
+                var menor = 1;
                 var mayor = 1;
-                _.each(newRankP, function(price){
-                    if(parseFloat(price) >= mayor){
-                        mayor = parseFloat(price);
-                        menor = menor;
+                _.each(newRankP, function(price, index){
+                    if(index == 0){
+                        if(parseFloat(price) >= mayor){
+                            mayor = parseFloat(price);
+                            menor = parseFloat(price);
+                        }
                     }else{
-                        mayor = menor;
-                        menor = parseFloat(price)
+                        if(parseFloat(price) >= mayor){
+                            mayor = parseFloat(price);
+                        }else if(parseFloat(price) <= menor){
+                            menor = parseFloat(price);
+                        }
                     }
                 });
                 this.renderSliderPrices(mayor, menor);
@@ -379,15 +384,20 @@ var FiltersView = Backbone.View.extend({
             if(newRankH.length == 1){
                 this.renderSliderHabitaciones(parseFloat(newRankH[0]), 1);
             }else if(newRankH.length >= 2){
-                var menor = parseFloat(newRankH[0]);
+                var menor = 1;
                 var mayor = 1;
-                _.each(newRankH, function(habita){
-                    if(parseFloat(habita) >= mayor){
-                        mayor = parseFloat(habita);
-                        menor = menor;
+                _.each(newRankH, function(habita, index){
+                    if(index == 0){
+                        if(parseFloat(habita) >= mayor){
+                            mayor = parseFloat(habita);
+                            menor = parseFloat(habita);
+                        }
                     }else{
-                        mayor = menor;
-                        menor = parseFloat(habita)
+                        if(parseFloat(habita) >= mayor){
+                            mayor = parseFloat(habita);
+                        }else if(parseFloat(habita) <= menor){
+                            menor = parseFloat(habita);
+                        }
                     }
                 });
                 this.renderSliderHabitaciones(mayor, menor);
