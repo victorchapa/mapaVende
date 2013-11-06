@@ -19,21 +19,28 @@
     <script src="assets/js/loadMap.js"></script>
   </head>
   <body>
-    <header>
-      <aside id='filters'></aside>
-      <div id="mainContainer">
-        <div id="mapDisplayer"></div>
+    <section class="documentContainer">
+      <header class="block">
+        <div class='logoContainer'>
+            <img src='assets/img/mapaLogo.png'>
+        </div> 
+      </header>
+      <div class="block push">
+        <aside id='filters'></aside>
+        <div id="mainContainer">
+          <div id="mapDisplayer"></div>
+        </div>
       </div>
-    </header>
-    <footer id="footer">
-      <img class="triangulesFooter" src="assets/img/triangules.png"> 
-      <div class="logosFooter">
-        <img src="assets/img/contactUs.png">
-        <img src="assets/img/ampiLogo.png">
-        <img src="assets/img/realtorLogo.png">
-      </div>
-      <div class="backgroundFooter"></div>
-    </footer>
+      <footer class="block">
+        <img class="triangulesFooter" src="assets/img/triangules.png"> 
+        <div class="logosFooter">
+          <img src="assets/img/contactUs.png">
+          <img src="assets/img/ampiLogo.png">
+          <img src="assets/img/realtorLogo.png">
+        </div>
+        <div class="backgroundFooter"></div>
+      </footer>
+    </section>
     <div class="modal" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">

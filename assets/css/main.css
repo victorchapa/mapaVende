@@ -1,8 +1,22 @@
 /* Main MAPA's CSS */
 
-header {
-  height: 475px;
-  margin-top: 5px;
+html, body {
+  height: 100%;
+}
+
+.documentContainer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.block {
+  display: table-row;
+  height: 1px;
+}
+
+.push {
+  height: auto;
 }
 
 .logoContainer {
@@ -180,14 +194,6 @@ span.bold {
 
 .property{
   margin: 10px;
-}
-
-#footer {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:141px;
-   width:100%;
 }
 
 .backgroundFooter {
