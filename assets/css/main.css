@@ -118,7 +118,7 @@ span.bold {
 
 #filters {
   width: 23%;
-  height: 470px;
+  height: 310px;
   margin-left: 0px;
   float: left;
 }
@@ -166,7 +166,7 @@ span.bold {
 #mainContainer {
   border: 1px solid black;
   margin-left: 24%;
-  height: 500px;
+  height: 340px;
 }
 
 .imgInfo img {
@@ -196,13 +196,14 @@ span.bold {
   margin: 10px;
 }
 
-.backgroundFooter {
+footer.block {
   height: 141px;
-  background: url("../img/backgroundFooter.png");
 }
 
-.triangulesFooter {
-  float: left;
+.backgroundFooter {
+  position: absolute;
+  width: 100%;
+  height: inherit;
 }
 
 .logosFooter {

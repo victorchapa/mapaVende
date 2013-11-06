@@ -32,13 +32,12 @@
         </div>
       </div>
       <footer class="block">
-        <img class="triangulesFooter" src="assets/img/triangules.png"> 
+        <img class="backgroundFooter" src="assets/img/backgroundFooter.png"> 
         <div class="logosFooter">
           <img src="assets/img/contactUs.png">
           <img src="assets/img/ampiLogo.png">
           <img src="assets/img/realtorLogo.png">
         </div>
-        <div class="backgroundFooter"></div>
       </footer>
     </section>
     <div class="modal" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
