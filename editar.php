@@ -22,7 +22,7 @@ $propiedad = consultar("SELECT * FROM propiedades WHERE IdPropiedad= $id_propied
     <script type="text/javascript" src="assets/js/clicks.js"></script>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <script src="http://maps.google.com/maps?file=api&;v=2&;key=AIzaSyAHIev-SgOWp6Fa9I7kaHePTUcP5AKQqfk&;sensor=false" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps?file=api&v=2&key=AIzaSyAHIev-SgOWp6Fa9I7kaHePTUcP5AKQqfk&sensor=false" type="text/javascript"></script>
     <script type="text/javascript">
       var map      = null;
       var geocoder = null;
