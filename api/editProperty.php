@@ -1,5 +1,5 @@
 <?php
-	include("seguridad.php");
+	include("security.php");
 	include("consultas.php");
 	require("dbConfig.php");
 ?>
@@ -9,37 +9,37 @@
     <meta charset="utf-8">
   </head>
 <?php
-$id = $_POST['id'];
-$direccion = $_POST['direccion'];
-$colonia = $_POST['colonia'];
-$id_estado = (string)$_POST['estado'];
-$id_municipio = $_POST['municipio'];
-$construccion = $_POST['construccion'];
-$unidad1 = $_POST['unidad1'];
-$terreno = $_POST['terreno'];
-$unidad2 = $_POST['unidad2'];
-$precio = $_POST['precio'];
-$moneda = $_POST['moneda'];
-$piso = $_POST['piso'];
-$cochera = $_POST['cochera'];
-$cuarto = $_POST['cuarto'];
-$bath = $_POST['bath'];
-$toperacion = $_POST['toperacion'];
-$antiguedad = $_POST['antiguedad'];
-$tpropiedad = $_POST['tpropiedad'];
-$finicio = $_POST['finicio'];
-$ffin = $_POST['ffin'];
-$descripcion = $_POST['descripcion'];
-$coordenadas = $_POST['coordenadas'];
+	$id = $_POST['id'];
+	$direccion = $_POST['direccion'];
+	$colonia = $_POST['colonia'];
+	$id_estado = (string)$_POST['estado'];
+	$id_municipio = $_POST['municipio'];
+	$construccion = $_POST['construccion'];
+	$unidad1 = $_POST['unidad1'];
+	$terreno = $_POST['terreno'];
+	$unidad2 = $_POST['unidad2'];
+	$precio = $_POST['precio'];
+	$moneda = $_POST['moneda'];
+	$piso = $_POST['piso'];
+	$cochera = $_POST['cochera'];
+	$cuarto = $_POST['cuarto'];
+	$bath = $_POST['bath'];
+	$toperacion = $_POST['toperacion'];
+	$antiguedad = $_POST['antiguedad'];
+	$tpropiedad = $_POST['tpropiedad'];
+	$finicio = $_POST['finicio'];
+	$ffin = $_POST['ffin'];
+	$descripcion = $_POST['descripcion'];
+	$coordenadas = $_POST['coordenadas'];
 
-$conexion =  mysql_connect($serverAddress, $user, $passwd);
-mysql_select_db($dbName);
-mysql_query ("SET NAMES 'utf8'");
 $estado = consultar("SELECT estado FROM estados WHERE id_estado= '$id_estado'");
 $municipio = consultar("SELECT municipio FROM municipios WHERE id_municipio = $id_municipio");
 $estado= $estado["0"]["estado"];
 $municipio = $municipio["0"]["municipio"];
-mysql_query("UPDATE propiedades SET Direccion='$direccion', Colonia='$colonia', Estado='$estado', Municipio='$municipio', Construccion='$construccion', Unidad1='$unidad1', Terreno='$terreno', Unidad2='$unidad2', Precio='$precio', Moneda='$moneda', Piso='$piso', Cochera='$cochera', Cuarto='$cuarto', Bathroom='$bath', Toperacion='$toperacion', Antiguedad='$antiguedad', Tpropiedad='$tpropiedad', FInicio='$finicio', FFin='$ffin', Coordenadas='$coordenadas' WHERE IdPropiedad='$id'");
+$conexion =  mysql_connect($serverAddress, $user, $passwd);
+mysql_select_db($dbName);
+mysql_query ("SET NAMES 'utf8'");
+mysql_query("UPDATE propiedades SET Direccion='$direccion', Colonia='$colonia', Estado='$estado', Municipio='$municipio', Construccion='$construccion', Unidad1='$unidad1', Terreno='$terreno', Unidad2='$unidad2', Precio='$precio', Moneda='$moneda', Piso='$piso', Cochera='$cochera', Cuarto='$cuarto', Bath='$bath', TOperacion='$toperacion', Antiguedad='$antiguedad', TPropiedad='$tpropiedad', FInicio='$finicio', FFin='$ffin', Coordenadas='$coordenadas' WHERE IdPropiedad='$id'");
 $fotos = consultar("SELECT * FROM propiedades WHERE IdPropiedad= '$id'");
 $old1= $fotos["0"]["Foto1"];
 $old2= $fotos["0"]["Foto2"];
