@@ -39,7 +39,7 @@ $municipio = $municipio["0"]["municipio"];
 $conexion =  mysql_connect($serverAddress, $user, $passwd);
 mysql_select_db($dbName);
 mysql_query ("SET NAMES 'utf8'");
-mysql_query("UPDATE propiedades SET Direccion='$direccion', Colonia='$colonia', Estado='$estado', Municipio='$municipio', Construccion='$construccion', Unidad1='$unidad1', Terreno='$terreno', Unidad2='$unidad2', Precio='$precio', Moneda='$moneda', Piso='$piso', Cochera='$cochera', Cuarto='$cuarto', Bath='$bath', TOperacion='$toperacion', Antiguedad='$antiguedad', TPropiedad='$tpropiedad', FInicio='$finicio', FFin='$ffin', Coordenadas='$coordenadas' WHERE IdPropiedad='$id'");
+mysql_query("UPDATE propiedades SET Direccion='$direccion', Colonia='$colonia', Estado='$estado', Municipio='$municipio', Construccion='$construccion', Unidad1='$unidad1', Terreno='$terreno', Unidad2='$unidad2', Precio='$precio', Moneda='$moneda', Piso='$piso', Cochera='$cochera', Cuarto='$cuarto', Bath='$bath', TOperacion='$toperacion', Antiguedad='$antiguedad', TPropiedad='$tpropiedad', FInicio='$finicio', FFin='$ffin', Descripcion='$descripcion', Coordenadas='$coordenadas' WHERE IdPropiedad='$id'");
 $fotos = consultar("SELECT * FROM propiedades WHERE IdPropiedad= '$id'");
 $old1= $fotos["0"]["Foto1"];
 $old2= $fotos["0"]["Foto2"];
