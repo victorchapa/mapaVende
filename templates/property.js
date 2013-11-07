@@ -4,8 +4,8 @@ TEMPLATES.property =
         "<div class='property'>" +
             "<input type= 'text' hidden='true' name='idPropiedad' value='<% print(property.IdPropiedad); %>'>" +
             "<div class='toContactForm'>" +
-                "<a href ='contacto.php?id=<% print(property.IdPropiedad); %>' target='_blank'>" +
-                    "<input class='btn-default' type='button' value='Contacto'>" +
+                "<a href ='#'>" +
+                    "<input id='showContactForm' class='btn-default' type='button' value='Contacto'>" +
                 "</a>" +
             "</div>" +
             "<p><span class='bold'>Dirección:</span> <% print(property.Direccion); %></p>" +
