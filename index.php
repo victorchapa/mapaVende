@@ -26,9 +26,9 @@
         </div> 
         <div class="navHeader">
           <ul>
-            <li><p>NUEVOS<br/>DESARROLLOS</p></li>
-            <li><p>INMUEBLES<br/> COMERCIALES</p></li>
-            <li><p>INMUEBLES<br/>COMERCIALES</p></li>
+            <li><p id="newProperties">NUEVOS<br/>DESARROLLOS</p></li>
+            <li><p id="semiProperties">PROPIEDADES<br/>SEMINUEVAS</p></li>
+            <li><p id="comercialProper">INMUEBLES<br/>COMERCIALES</p></li>
           </ul>
         </div>
       </header>
@@ -80,6 +80,7 @@
     <!-- Views -->
     <script src="assets/js/app/views/indexView.js"></script>
     <script src="assets/js/app/views/filtersView.js"></script>
+    <script src="assets/js/app/views/headerNav.js"></script>
 
   </body>
 </html>

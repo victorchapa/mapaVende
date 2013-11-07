@@ -8,5 +8,6 @@ MapaIn.Router = Backbone.Router.extend({
     index: function(){
         var indexView = new IndexView();
         var filersView = new FiltersView();
+        var headerNavView = new HeaderNavView();
     },
 });
