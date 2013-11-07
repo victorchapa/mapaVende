@@ -88,21 +88,43 @@ function drawingMarkers(data){
         
         google.maps.event.addListener(markerInfo, "domready", function(){
 
-            var template = TEMPLATES.property;
-            var compilatedTemplate = _.template($(template).html());
+            var templateProper = TEMPLATES.property;
+            var templateContact = TEMPLATES.contact;
+            var compilatedTemplateP = _.template($(templateProper).html());
+            var compilatedTemplateC = _.template($(templateContact).html());
             var id = $(".idProperty").val();
             var propertyModel = new PropertyModel(id);
             propertyModel.fetch({
                 success: function(data){
                     var data = data.toJSON();
                     var property = {property: data[0]};
-                    $("#modalDisplayer").html(compilatedTemplate(property));
+                    var propertyId = {propertyId: data[0].IdPropiedad};
+                    $("#modalDisplayer1").html(compilatedTemplateP(property));
+                    $("#modalDisplayer2").html(compilatedTemplateC(propertyId));
                 },
             });
             $(".moreDetails").on("click", function(){
+                MyFunctions.addEventsToValidation();
+                $(".modal-dialog").removeAttr("style");
+                $("#modalDisplayer1").removeAttr("style");
+                $("#modalDisplayer2").hide();
                 $("#Modal").modal("show");
                 $(".showMorePhotos").on("click", function(){
                     $(".imgGroup").show("slow");
+                });
+                $("#showContactForm").on("click", function(){
+                    $(".modal-dialog").animate({
+                        width: "850px",
+                    }, 1000);
+                    $("#modalDisplayer1").animate({
+                        width: "60%",
+                    }, 1000);
+                    $("#modalDisplayer1").css({
+                        float: "left",
+                    });
+                    window.setTimeout(function(){
+                        $("#modalDisplayer2").show("slow");
+                    }, 1500);
                 });
             });
 
