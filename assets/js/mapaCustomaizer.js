@@ -51,7 +51,7 @@ function drawingMarkers(data){
         if(propertie.Foto1 != ""){
             var contentString = '<div class="infoArea">'+
             '<div class="imgInfo">' +
-            '<img src="api/'+ propertie.Foto1 + '">' +
+            '<img src="thumb.php?file=/api/'+ propertie.Foto1 + '&width=150">' +
             '</div>' +
             '</div>' +
             '<div class="infoData">'+
