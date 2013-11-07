@@ -24,6 +24,13 @@
         <div class='logoContainer'>
             <img src='assets/img/mapaLogo.png'>
         </div> 
+        <div class="navHeader">
+          <ul>
+            <li><p>NUEVOS<br/>DESARROLLOS</p></li>
+            <li><p>INMUEBLES<br/> COMERCIALES</p></li>
+            <li><p>INMUEBLES<br/>COMERCIALES</p></li>
+          </ul>
+        </div>
       </header>
       <div class="block push">
         <aside id='filters'></aside>

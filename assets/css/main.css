@@ -20,96 +20,45 @@ html, body {
 }
 
 .logoContainer {
-  margin: 0 auto;
+  width: 30%;
 }
 
-.logoContainer2 {
-  position: absolute;
-}
-.logoContainer2 img {
-  width: 215px;
-  height: 130px;
+.navHeader {
+  width: 70%;
 }
 
-.loginField {
-  position: absolute;
-  z-index: 2;
-  right: 0%;
-  top: 0%;
-  background: #0404B4;
-  border-radius: 15px 0 0 15px;
-  padding: 0 10px 0px 10px;
-  border: 1px solid #08298A;
-  color: white;
-  height: 53px;
-  
+.logoContainer, .navHeader {
+  display: inline-block;
 }
 
-.brandLogin {
+.navHeader ul {
+  height: 84px;
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  margin: 0 12px 0 12px;
+  background-color: #08088A;
+  border-radius: 15px;
+}
+
+.navHeader ul li {
+  display: inline;
+  margin: 0 12px 0 0;
   cursor: pointer;
 }
 
-.loginField p, .loginField form {
+.navHeader ul li p {
   display: inline-block;
-}
-
-.loginField .brandLogin {
-  width: 95px;
-  display: inline-block;
-}
-
-#loginForm {
-  margin-left: 5px;
-}
-
-#loginForm input[type="text"], #loginForm input[type="password"] {
-  text-align: center;
-}
-
-#loginForm input[type="submit"], .btn-default {
-  background: #FF8000;
-  border-color: #DF7401;
-  color: #F2F2F2;
+  width: 30%;
+  margin 0;
+  font-size: 18px;
   font-weight: bold;
-}
-.loginAs {
-  position: absolute;
-  right: 0%;
-  z-index: 1;
-  margin-top: 6px;
-  background: #0B0B61;
-  border-radius: 12px 0 0 12px;
   color: white;
-  padding: 10px;
+  border-right: 5px solid silver;
 }
 
-.loginAs h1 {
-  text-align: left;
-}
-
-.loginAs ul {
-  list-style: none;
-}
-
-.loginAs ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
-.loginAs ul li a:hover {
-  border: 2px solid white;
-  border-radius: 12px;
-  padding: 1px;
-}
-
-.loginAs ul li a {
-  color: orange;
-  text-decoration: none;
-  padding: 3px;
-}
-
-.loginAs p {
-  color: orange;
+.navHeader ul li:last-child p {
+  border-right: none;
 }
 
 span.bold {
@@ -188,9 +137,6 @@ span.bold {
   resize: none;
 }
 
-.propertyContainer {
-
-}
 
 .property{
   margin: 10px;
