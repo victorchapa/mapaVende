@@ -99,12 +99,7 @@ TEMPLATES.addProperty =
       "<p>Fecha inicio de disponibilidad: <input type='text' id='datePicker' name='finicio'><p>" +
       "<p>Fecha final de disponibilidad: <input type='text' id='datePicker' name='ffin'><p>" +
       "<p>Descripción: <textarea id='descripcion' name='descripcion' rows='10' maxlength='500'></textarea>" +
-      "<p>Imagen 1: <input type='file' name='foto1' accept='image/jpeg, image/bmp'>" +
-      "<p>Imagen 2: <input type='file' name='foto2' accept='image/jpeg, image/bmp'>" +
-      "<p>Imagen 3: <input type='file' name='foto3' accept='image/jpeg, image/bmp'>" +
-      "<p>Imagen 4: <input type='file' name='foto4' accept='image/jpeg, image/bmp'>" +
-      "<p>Imagen 5: <input type='file' name='foto5' accept='image/jpeg, image/bmp'>" +
-      "<p>Imagen 6: <input type='file' name='foto6' accept='image/jpeg, image/bmp'>" +
+      "<p>Imagenes (máximo 6): <input type='file' name='foto[]' multiple='multiple' accept='image/jpeg, image/bmp'>" +
       "<p>Coordenadas: <input type='text' name='coordenadas' readonly='readonly' style='width: 180px;'/></p>" +
       "<div id='map' style='width: 600px; height: 400px; position: relative; background-color: rgb(229, 227, 223);'>" +
       "</div>" +

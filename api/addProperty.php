@@ -23,8 +23,8 @@
 	$cochera = $_POST['cochera'];
 	$cuarto = $_POST['cuarto'];
 	$bath = $_POST['bath'];
-  $toperacion = $_POST['toperacion'];
-  $antiguedad = $_POST['antiguedad'];
+	$toperacion = $_POST['toperacion'];
+	$antiguedad = $_POST['antiguedad'];
 	$tpropiedad = $_POST['tpropiedad'];
 	$finicio = $_POST['finicio'];
 	$ffin = $_POST['ffin'];
@@ -45,8 +45,8 @@
 	mkdir ("property/".$id);
 	$rutaServidor = "property/".$id;
 
-	if ($_FILES["foto1"]["name"] != ""){
-		$rutaTemporal = $_FILES["foto1"]["tmp_name"];
+	if ($_FILES["foto"]["name"]["0"] != ""){
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["0"];
 		$nombreImagen = "img1.jpg";
 		$foto1 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto1);
@@ -54,8 +54,8 @@
 		$foto1= "";
 	}
 
-	if ($_FILES["foto2"]["name"] != ""){
-		$rutaTemporal = $_FILES["foto2"]["tmp_name"];
+	if ($_FILES["foto"]["name"]["1"] != ""){
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["1"];
 		$nombreImagen = "img2.jpg";
 		$foto2 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto2);
@@ -63,8 +63,8 @@
 		$foto2= "";
 	}
 
-	if ($_FILES["foto3"]["name"] != ""){
-		$rutaTemporal = $_FILES["foto3"]["tmp_name"];
+	if ($_FILES["foto"]["name"]["2"] != ""){
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["2"];
 		$nombreImagen = "img3.jpg";
 		$foto3 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto3);
@@ -72,8 +72,8 @@
 		$foto3= "";
 	}
 
-	if ($_FILES["foto4"]["name"] != ""){
-		$rutaTemporal = $_FILES["foto4"]["tmp_name"];
+	if ($_FILES["foto"]["name"]["3"] != ""){
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["3"];
 		$nombreImagen = "img4.jpg";
 		$foto4 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto4);
@@ -81,8 +81,8 @@
 		$foto4= "";
 	}
 
-	if ($_FILES["foto5"]["name"] != ""){
-		$rutaTemporal = $_FILES["foto5"]["tmp_name"];
+	if ($_FILES["foto"]["name"]["4"] != ""){
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["4"];
 		$nombreImagen = "img5.jpg";
 		$foto5 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto5);
@@ -90,8 +90,8 @@
 		$foto5= "";
 	}
 
-	if ($_FILES["foto6"]["name"] != ""){
-		$rutaTemporal = $_FILES["foto6"]["tmp_name"];
+	if ($_FILES["foto"]["name"]["5"] != ""){
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["5"];
 		$nombreImagen = "img6.jpg";
 		$foto6 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto6);

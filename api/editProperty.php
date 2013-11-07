@@ -48,11 +48,11 @@ $old4= $fotos["0"]["Foto4"];
 $old5= $fotos["0"]["Foto5"];
 $old6= $fotos["0"]["Foto6"];
 $rutaServidor = "property/".$id;
-if ($_FILES["foto1"]["name"] != ""){
+if ($_FILES["foto"]["name"]["0"] != ""){
 	if($old1 != ""){
 		unlink($old1);
 	}
-		$rutaTemporal = $_FILES["foto1"]["tmp_name"];
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["0"];
 		$nombreImagen = "img1.jpg";
 		$foto1 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto1);
@@ -60,11 +60,11 @@ if ($_FILES["foto1"]["name"] != ""){
 	$foto1 = $old1;
 }
 
-if ($_FILES["foto2"]["name"] != ""){
+if ($_FILES["foto"]["name"]["1"] != ""){
 	if($old2 != ""){
 		unlink($old2);
 	}
-		$rutaTemporal = $_FILES["foto2"]["tmp_name"];
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["1"];
 		$nombreImagen = "img2.jpg";
 		$foto2 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto2);
@@ -72,11 +72,11 @@ if ($_FILES["foto2"]["name"] != ""){
 	$foto2 = $old2;
 }
 
-if ($_FILES["foto3"]["name"] != ""){
+if ($_FILES["foto"]["name"]["2"] != ""){
 	if($old3 != ""){
 		unlink($old3);
 	}
-		$rutaTemporal = $_FILES["foto3"]["tmp_name"];
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["2"];
 		$nombreImagen = "img3.jpg";
 		$foto3 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto3);
@@ -84,11 +84,11 @@ if ($_FILES["foto3"]["name"] != ""){
 	$foto3 = $old3;
 }
 
-if ($_FILES["foto4"]["name"] != ""){
+if ($_FILES["foto"]["name"]["3"] != ""){
 	if($old4 != ""){
 		unlink($old4);
 	}
-		$rutaTemporal = $_FILES["foto4"]["tmp_name"];
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["3"];
 		$nombreImagen = "img4.jpg";
 		$foto4 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto4);
@@ -96,11 +96,11 @@ if ($_FILES["foto4"]["name"] != ""){
 	$foto4 = $old4;
 }
 
-if ($_FILES["foto5"]["name"] != ""){
+if ($_FILES["foto"]["name"]["4"] != ""){
 	if($old5 != ""){
 			unlink($old5);
 	}
-		$rutaTemporal = $_FILES["foto5"]["tmp_name"];
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["4"];
 		$nombreImagen = "img5.jpg";
 		$foto5 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto5);
@@ -108,11 +108,11 @@ if ($_FILES["foto5"]["name"] != ""){
 	$foto5 = $old5;
 }
 
-if ($_FILES["foto6"]["name"] != ""){
+if ($_FILES["foto"]["name"]["5"] != ""){
 	if($old6 != ""){
 			unlink($old6);
 	}
-		$rutaTemporal = $_FILES["foto6"]["tmp_name"];
+		$rutaTemporal = $_FILES["foto"]["tmp_name"]["5"];
 		$nombreImagen = "img6.jpg";
 		$foto6 = $rutaServidor.'/'.$nombreImagen;
 		move_uploaded_file($rutaTemporal, $foto6);
