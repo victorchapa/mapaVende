@@ -19,6 +19,14 @@ html, body {
   height: auto;
 }
 
+.wrapper {
+  overflow: auto;
+}
+
+.secondChild {
+  float: right;
+}
+
 .logoContainer {
   width: 30%;
 }
@@ -208,11 +216,22 @@ footer.block {
   float: right;
 }
 
+.btn-default {
+  background: #FF8000;
+  border-color: #DF7401;
+  color: #F2F2F2;
+  font-weight: bold;
+}
+
 .btn-details {
   background: #0404B4;
   border-color: #08088A;
   color: #F2F2F2;
   font-weight: bold;
+}
+
+.btn-disabled {
+  opacity: .5;
 }
 
 .mainImage {
@@ -233,6 +252,23 @@ footer.block {
   display: none;
 }
 
-.btn-disabled {
-  opacity: .5;
+#modalDisplayer2 {
+  display: none;
+  width: 38%;
+  float: right;
+  padding-left: 12px;
+  border-left: 1px solid silver;
+}
+
+#modalDisplayer2 .contactForm .headerContact {
+  text-align: center;
+}
+
+#modalDisplayer2 .contactForm textarea {
+  width: 100%;
+  resize: none;
+}
+
+#modalDisplayer2 .contactForm input[type="submit"] {
+  float: right;
 }

@@ -54,8 +54,9 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h2 class="modal-title">Detalles de la Propiedad</h2>
           </div>
-          <div id="modalDisplayer" class="modal-body">
-            ...
+          <div id="modalDisplayer" class="modal-body wrapper">
+            <div id="modalDisplayer1" class="firstChild"></div>
+            <div id="modalDisplayer2" class="secondChild"></div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-details" data-dismiss="modal">Cerrar</button>
@@ -68,9 +69,11 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/router.js"></script>
     <script src="assets/js/templates.js"></script>
+    <script src="assets/js/contactValidation.js"></script>
     <!-- Templates -->
     <script src="templates/filters.js"></script>
     <script src="templates/property.js"></script>
+    <script src="templates/contact.js"></script>
     <!-- Collections -->
     <script src="assets/js/app/collections/properties.js"></script>
     <script src="assets/js/app/collections/prices.js"></script>
