@@ -15,11 +15,10 @@
 	$colonia = $propiedad["0"]["Colonia"];
 	$estado = $propiedad["0"]["Estado"];
 	$municipio = $propiedad["0"]["Municipio"];
-	$sendTo = "apreza@gmail.com";
+	$sendTo = "ventasweb@mapavende.com";
 	$subject = "Mapavende";
 	$headers = "Content-type: text/html\r\n";
 	$headers .= "From: ".$mail."\r\n";
-	$headers .= "Bcc: apreza@mapavende.com;\r\n";
 	$message = ' <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><head> 
 	<title>Contacto Mapavende</title>
