@@ -19,24 +19,24 @@ TEMPLATES.addProperty =
       "<p>Colonia: <input type= 'text' name='colonia'/></p>" +
       "<p>Estado: <select name='estado' class='cambiar'>"+
         "<option value='0'>Seleccione un estado</option>" +
-        "<option value='<% print (estado.id_estado) %>'><% print (estado.estado) %></option>" +
+        "<option value='<% print(estado.id_estado); %>'><% print(estado.estado); %></option>" +
       "</select></p>"
       "<p>Municipio: <select name='municipio' class='municipio'>" +
         "<option>Seleccione un municipio</option>" +
       "</select></p>" +
-      "<p>Superficie de construcción: <input type='text' name='construccion' onkeypress='return validar(event)'></input>" +
+      "<p>Superficie de construcción: <input type='text' name='construccion'/>" +
       "<select name='unidad1'>" +
       "<option value='M2'>M2</option>" +
       "<option value='Hectarea'>Hectarea</option>" +
       "<option value='Acre'>Acre</option>" +
       "</select></p>" +
-      "<p>Superficie del terreno: <input type='text' name='terreno' onkeypress='return validar(event)'></input>" +
+      "<p>Superficie del terreno: <input type='text' name='terreno'/>" +
       "<select name='unidad2'>" +
       "<option value='M2'>M2</option>" +
       "<option value='Hectarea'>Hectarea</option>" +
       "<option value='Acre'>Acre</option>" +
       "</select></p>" +
-      "<p>Precio: <input type='text' name='precio' onkeypress='return validar(event)'></input>" +
+      "<p>Precio: <input type='text' name='precio'></input>" +
       "<select name='moneda'>" +
       "<option value='Pesos'>Pesos</option>" +
       "<option value='Dolares'>Dolares</option>" +
@@ -51,22 +51,22 @@ TEMPLATES.addProperty =
       "</select></p>" +
       "<p>Cochera(s): <select name='cochera'>" +
       "<% for (i=0; i<10; i++){ %>" +
-        "<option value='<% print(i) %>'><% print(i)%></option>" +
+        "<option value='<% print(i); %>'><% print(i); %></option>" +
         "<% } %>" +
         "<option value='mas de 9'>mas de 9</option>" +
       "</select></p>" +
       "<p>Cuarto(s): <select name='cuarto'>" +
       "<% for (i=0; i<7; i++){ %>" +
-        "<option value='<% print(i) %>'><% print(i) %></option>" +
+        "<option value='<% print(i); %>'><% print(i); %></option>" +
       "<% } %>" +
         "<option value='varios'>varios</option>" +
       "</select></p>" +
       "<p>Baño(s): <select name='bath'>" +
       "<% for (i=0; i<7; i++){ %>" +
-        "<option value='<% print(i) %>'><% print(i) %></option>" +
+        "<option value='<% print(i); %>'><% print(i); %></option>" +
       "<% } %>" +
       "<% for (i=1.5; i<7.5; i++){ %>" +
-        "<option value='<% print(i) %>'><% print(i) %></option>" +
+        "<option value='<% print(i); %>'><% print(i); %></option>" +
       "<% } %>" +
         "<option value='mas de 8'>mas de 8</option>" +
       "</select></p>" +

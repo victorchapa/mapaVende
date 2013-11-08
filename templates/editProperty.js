@@ -15,29 +15,29 @@ TEMPLATES.addProperty =
   "<div class='formAgregar'>" +
     "<h1>Agregar propiedad</h1>" +
     "<form name ='form' method='post' action='api/addProperty.php' enctype='multipart/form-data'>" +
-      "<input type='hidden' name='id' value='<% print(property.IdPropiedad) %>'></input>"
-      "<p>Dirección: <input type= 'text' name='direccion' value='<% print(property.Direccion) %>'/></p>" +
-      "<p>Colonia: <input type= 'text' name='colonia' value='<% print(property.Colonia) %>'/></p>" +
+      "<input type='hidden' name='id' value='<% print(property.IdPropiedad); %>'></input>"
+      "<p>Dirección: <input type= 'text' name='direccion' value='<% print(property.Direccion); %>'/></p>" +
+      "<p>Colonia: <input type= 'text' name='colonia' value='<% print(property.Colonia); %>'/></p>" +
       "<p>Estado: <select name='estado' class='cambiar'>"+
         "<option value='0'>Seleccione un estado</option>" +
-        "<option value='<% print id_estado %>'><% print estado %></option>" +
+        "<option value='<% print(id_estado); %>'><% print(estado); %></option>" +
       "</select></p>"
       "<p>Municipio: <select name='municipio' class='municipio'>" +
         "<option>Seleccione un municipio</option>" +
       "</select></p>" +
-      "<p>Superficie de construcción: <input type='text' name='construccion' value='<% print(property.Construccion) %>' onkeypress='return validar(event)'></input>" +
+      "<p>Superficie de construcción: <input type='text' name='construccion' value='<% print(property.Construccion); %>'/>" +
       "<select name='unidad1'>" +
       "<option value='M2'>M2</option>" +
       "<option value='Hectarea'>Hectarea</option>" +
       "<option value='Acre'>Acre</option>" +
       "</select></p>" +
-      "<p>Superficie del terreno: <input type='text' name='terreno' value='<% print(property.Terreno) %>' onkeypress='return validar(event)'></input>" +
+      "<p>Superficie del terreno: <input type='text' name='terreno' value='<% print(property.Terreno); %>'/>" +
       "<select name='unidad2'>" +
       "<option value='M2'>M2</option>" +
       "<option value='Hectarea'>Hectarea</option>" +
       "<option value='Acre'>Acre</option>" +
       "</select></p>" +
-      "<p>Precio: <input type='text' name='precio' value='<% print(property.Precio) %>' onkeypress='return validar(event)'></input>" +
+      "<p>Precio: <input type='text' name='precio' value='<% print(property.Precio); %>'/>" +
       "<select name='moneda'>" +
         "<option value='Pesos'>Pesos</option>" +
         "<option value='Dolares'>Dolares</option>" +
@@ -52,22 +52,22 @@ TEMPLATES.addProperty =
       "</select></p>" +
       "<p>Cochera(s): <select name='cochera'>" +
       "<% for (i=0; i<10; i++){ %>" +
-        "<option value='<% print(i) %>'><% print(i) %></option>" +
+        "<option value='<% print(i); %>'><% print(i); %></option>" +
         "<% } %>" +
         "<option value='mas de 9'>mas de 9</option>" +
       "</select></p>" +
       "<p>Cuarto(s): <select name='cuarto'>" +
       "<% for (i=0; i<7; i++){ %>" +
-        "<option value='<% print(i) %>'><% print(i) %></option>" +
+        "<option value='<% print(i); %>'><% print(i); %></option>" +
       "<% } %>" +
         "<option value='varios'>varios</option>" +
       "</select></p>" +
       "<p>Baño(s): <select name='bath'>" +
       "<% for (i=0; i<7; i++){ %>" +
-        "<option value='<% print(i) %>'><% print(i) %></option>" +
+        "<option value='<% print(i); %>'><% print(i); %></option>" +
       "<% } %>" +
       "<% for (i=1.5; i<7.5; i++){ %>" +
-        "<option value='<% print(i) %>'><% print(i) %></option>" +
+        "<option value='<% print(i); %>'><% print(i); %></option>" +
       "<% } %>" +
         "<option value='mas de 8'>mas de 8</option>" +
       "</select></p>" +
@@ -101,7 +101,7 @@ TEMPLATES.addProperty =
       "<p>Fecha final de disponibilidad: <input type='text' id='datePicker' name='ffin'><p>" +
       "<p>Descripción: <textarea id='descripcion' name='descripcion' rows='10' maxlength='500'></textarea>" +
       "<p>Imagenes (máximo 6): <input type='file' name='foto[]' multiple='multiple' accept='image/jpeg, image/bmp'>" +
-      "<p>Coordenadas: <input type='text' name='coordenadas' readonly='readonly' value='<% print(property.Coordenadas) %>' style='width: 180px;'/></p>" +
+      "<p>Coordenadas: <input type='text' name='coordenadas' readonly='readonly' value='<% print(property.Coordenadas); %>' style='width: 180px;'/></p>" +
       "<div id='map' style='width: 600px; height: 400px; position: relative; background-color: rgb(229, 227, 223);'>" +
       "</div>" +
       "<p><input type='submit' name='agregar' value='Agregar'></p>" +
