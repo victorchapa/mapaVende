@@ -250,6 +250,48 @@ footer.block {
 
 .imgGroup {
   display: none;
+  overflow: hidden;
+  height: 150px;
+  width: 450px;
+  position: relative;
+}
+
+.imgGroup ul {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0;
+  width: 750px;
+}
+
+.imgGroup ul li {
+  float: left;
+  position: relative;
+}
+
+.imgGroup .arrowBack{
+  position: absolute;
+  z-index: 7;
+  top: 50px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 61px;
+  width: 40px;
+  left: 0;
+  background: url("../img/arrowBack.png");
+}
+
+.imgGroup .arrowNext{
+  position: absolute;
+  z-index: 7;
+  top: 50px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 40px;
+  height: 61px;
+  right: 0;
+  background: url("../img/arrowNext.png");
 }
 
 #modalDisplayer2 {

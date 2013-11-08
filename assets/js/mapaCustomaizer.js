@@ -104,6 +104,7 @@ function drawingMarkers(data){
                 },
             });
             $(".moreDetails").on("click", function(){
+
                 MyFunctions.addEventsToValidation();
                 $(".modal-dialog").removeAttr("style");
                 $("#modalDisplayer1").removeAttr("style");
@@ -126,6 +127,28 @@ function drawingMarkers(data){
                         $("#modalDisplayer2").show("slow");
                     }, 1500);
                 });
+
+                $("#nextImg").on("mouseover", function(e){
+                    mouseInterval = setInterval(function(){
+                        console.log("Next");
+                    }, 1000);
+                });
+
+                $("#nextImg").on("mouseleave", function(e){
+                    clearInterval(mouseInterval);
+                });
+
+                $("#backImg").on("mouseover", function(e){
+                    mouseInterval = setInterval(function(){
+                        console.log("Back");
+                    }, 1000);
+                });
+
+                $("#backImg").on("mouseleave", function(e){
+                    clearInterval(mouseInterval);
+                });
+
+
             });
 
         });

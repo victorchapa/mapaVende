@@ -2,8 +2,8 @@ TEMPLATES.contact =
     "<script type='text/template'>" +
         "<div class='contactForm'>" +
             "<div class='headerContact'>" +
-                "<h3>Llamar a: 312-103-27-43 ó </h3>" +
-                "<h3>Contactar con la Inmobiliaria</h3>" +
+                "<h3>Llamanos al: (312) 161-4450 ó </h3>" +
+                "<h3>Enviar un correo electronico</h3>" +
             "</div>" +
             "<form action='api/mail.php' method='POST'>" +
                 "<input type='hidden' name='id' value='<% print(propertyId); %>'>" +
