@@ -1,101 +1,72 @@
 /* Main MAPA's CSS */
 
-header {
-  height: 475px;
-  margin-top: 5px;
+html, body {
+  height: 100%;
+}
+
+.documentContainer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.block {
+  display: table-row;
+  height: 1px;
+}
+
+.push {
+  height: auto;
+}
+
+.wrapper {
+  overflow: auto;
+}
+
+.secondChild {
+  float: right;
 }
 
 .logoContainer {
-  margin: 0 auto;
+  width: 30%;
 }
 
-.logoContainer2 {
-  position: absolute;
-}
-.logoContainer2 img {
-  width: 215px;
-  height: 130px;
+.navHeader {
+  width: 70%;
 }
 
-.loginField {
-  position: absolute;
-  z-index: 2;
-  right: 0%;
-  top: 0%;
-  background: #0404B4;
-  border-radius: 15px 0 0 15px;
-  padding: 0 10px 0px 10px;
-  border: 1px solid #08298A;
-  color: white;
-  height: 53px;
-  
+.logoContainer, .navHeader {
+  display: inline-block;
 }
 
-.brandLogin {
+.navHeader ul {
+  height: 84px;
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  margin: 0 12px 0 12px;
+  background-color: #08088A;
+  border-radius: 15px;
+}
+
+.navHeader ul li {
+  display: inline;
+  margin: 0 12px 0 0;
   cursor: pointer;
 }
 
-.loginField p, .loginField form {
+.navHeader ul li p {
   display: inline-block;
-}
-
-.loginField .brandLogin {
-  width: 95px;
-  display: inline-block;
-}
-
-#loginForm {
-  margin-left: 5px;
-}
-
-#loginForm input[type="text"], #loginForm input[type="password"] {
-  text-align: center;
-}
-
-#loginForm input[type="submit"], .btn-default {
-  background: #FF8000;
-  border-color: #DF7401;
-  color: #F2F2F2;
+  width: 30%;
+  margin 0;
+  font-size: 18px;
   font-weight: bold;
-}
-.loginAs {
-  position: absolute;
-  right: 0%;
-  z-index: 1;
-  margin-top: 6px;
-  background: #0B0B61;
-  border-radius: 12px 0 0 12px;
   color: white;
-  padding: 10px;
+  border-right: 5px solid silver;
 }
 
-.loginAs h1 {
-  text-align: left;
-}
-
-.loginAs ul {
-  list-style: none;
-}
-
-.loginAs ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
-.loginAs ul li a:hover {
-  border: 2px solid white;
-  border-radius: 12px;
-  padding: 1px;
-}
-
-.loginAs ul li a {
-  color: orange;
-  text-decoration: none;
-  padding: 3px;
-}
-
-.loginAs p {
-  color: orange;
+.navHeader ul li:last-child p {
+  border-right: none;
 }
 
 span.bold {
@@ -104,7 +75,7 @@ span.bold {
 
 #filters {
   width: 23%;
-  height: 470px;
+  height: 310px;
   margin-left: 0px;
   float: left;
 }
@@ -152,7 +123,7 @@ span.bold {
 #mainContainer {
   border: 1px solid black;
   margin-left: 24%;
-  height: 500px;
+  height: 340px;
 }
 
 .formAgregar {
@@ -170,29 +141,19 @@ span.bold {
   resize: none;
 }
 
-.propertyContainer {
-
-}
 
 .property{
   margin: 10px;
 }
 
-#footer {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:141px;
-   width:100%;
+footer.block {
+  height: 141px;
 }
 
 .backgroundFooter {
-  height: 141px;
-  background: url("../img/backgroundFooter.png");
-}
-
-.triangulesFooter {
-  float: left;
+  position: absolute;
+  width: 100%;
+  height: inherit;
 }
 
 .logosFooter {
@@ -251,11 +212,22 @@ span.bold {
   float: right;
 }
 
+.btn-default {
+  background: #FF8000;
+  border-color: #DF7401;
+  color: #F2F2F2;
+  font-weight: bold;
+}
+
 .btn-details {
   background: #0404B4;
   border-color: #08088A;
   color: #F2F2F2;
   font-weight: bold;
+}
+
+.btn-disabled {
+  opacity: .5;
 }
 
 .mainImage {
@@ -274,8 +246,67 @@ span.bold {
 
 .imgGroup {
   display: none;
+  overflow: hidden;
+  height: 150px;
+  width: 450px;
+  position: relative;
 }
 
-.btn-disabled {
-  opacity: .5;
+.imgGroup ul {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0;
+  width: 750px;
+}
+
+.imgGroup ul li {
+  float: left;
+  position: relative;
+}
+
+.imgGroup .arrowBack{
+  position: absolute;
+  z-index: 7;
+  top: 50px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 61px;
+  width: 40px;
+  left: 0;
+  background: url("../img/arrowBack.png");
+}
+
+.imgGroup .arrowNext{
+  position: absolute;
+  z-index: 7;
+  top: 50px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 40px;
+  height: 61px;
+  right: 0;
+  background: url("../img/arrowNext.png");
+}
+
+#modalDisplayer2 {
+  display: none;
+  width: 38%;
+  float: right;
+  padding-left: 12px;
+  border-left: 1px solid silver;
+}
+
+#modalDisplayer2 .contactForm .headerContact {
+  text-align: center;
+}
+
+#modalDisplayer2 .contactForm textarea {
+  width: 100%;
+  resize: none;
+}
+
+#modalDisplayer2 .contactForm input[type="submit"] {
+  float: right;
 }

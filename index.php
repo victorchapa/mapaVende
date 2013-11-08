@@ -19,21 +19,34 @@
     <script src="assets/js/loadMap.js"></script>
   </head>
   <body>
-    <header>
-      <aside id='filters'></aside>
-      <div id="mainContainer">
-        <div id="mapDisplayer"></div>
+    <section class="documentContainer">
+      <header class="block">
+        <div class='logoContainer'>
+            <img src='assets/img/mapaLogo.png'>
+        </div> 
+        <div class="navHeader">
+          <ul>
+            <li><p id="newProperties">NUEVOS<br/>DESARROLLOS</p></li>
+            <li><p id="semiProperties">PROPIEDADES<br/>SEMINUEVAS</p></li>
+            <li><p id="comercialProper">INMUEBLES<br/>COMERCIALES</p></li>
+          </ul>
+        </div>
+      </header>
+      <div class="block push">
+        <aside id='filters'></aside>
+        <div id="mainContainer">
+          <div id="mapDisplayer"></div>
+        </div>
       </div>
-    </header>
-    <footer id="footer">
-      <img class="triangulesFooter" src="assets/img/triangules.png"> 
-      <div class="logosFooter">
-        <img src="assets/img/contactUs.png">
-        <img src="assets/img/ampiLogo.png">
-        <img src="assets/img/realtorLogo.png">
-      </div>
-      <div class="backgroundFooter"></div>
-    </footer>
+      <footer class="block">
+        <img class="backgroundFooter" src="assets/img/backgroundFooter.png"> 
+        <div class="logosFooter">
+          <img src="assets/img/contactUs.png">
+          <img src="assets/img/ampiLogo.png">
+          <img src="assets/img/realtorLogo.png">
+        </div>
+      </footer>
+    </section>
     <div class="modal" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -41,8 +54,9 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h2 class="modal-title">Detalles de la Propiedad</h2>
           </div>
-          <div id="modalDisplayer" class="modal-body">
-            ...
+          <div id="modalDisplayer" class="modal-body wrapper">
+            <div id="modalDisplayer1" class="firstChild"></div>
+            <div id="modalDisplayer2" class="secondChild"></div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-details" data-dismiss="modal">Cerrar</button>
@@ -55,9 +69,11 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/router.js"></script>
     <script src="assets/js/templates.js"></script>
+    <script src="assets/js/contactValidation.js"></script>
     <!-- Templates -->
     <script src="templates/filters.js"></script>
     <script src="templates/property.js"></script>
+    <script src="templates/contact.js"></script>
     <!-- Collections -->
     <script src="assets/js/app/collections/properties.js"></script>
     <script src="assets/js/app/collections/prices.js"></script>
@@ -67,6 +83,7 @@
     <!-- Views -->
     <script src="assets/js/app/views/indexView.js"></script>
     <script src="assets/js/app/views/filtersView.js"></script>
+    <script src="assets/js/app/views/headerNav.js"></script>
 
   </body>
 </html>

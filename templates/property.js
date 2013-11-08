@@ -4,8 +4,8 @@ TEMPLATES.property =
         "<div class='property'>" +
             "<input type= 'text' hidden='true' name='idPropiedad' value='<% print(property.IdPropiedad); %>'>" +
             "<div class='toContactForm'>" +
-                "<a href ='contacto.php?id=<% print(property.IdPropiedad); %>' target='_blank'>" +
-                    "<input class='btn-default' type='button' value='Contacto'>" +
+                "<a href ='#'>" +
+                    "<input id='showContactForm' class='btn-default' type='button' value='Contacto'>" +
                 "</a>" +
             "</div>" +
             "<p><span class='bold'>Tipo de propiedad:</span> <% print(property.TPropiedad); %></p>" +
@@ -26,21 +26,25 @@ TEMPLATES.property =
             "<% if (property.Foto2 != '') { %>" +
                 "<p class='showMorePhotos'>Mostrar más fotos...</p>" +
                 "<div class='imgGroup'>" +
+                    "<input id='backImg' type='button' class='arrowBack'/>" +
+                    "<input id='nextImg' type='button' class='arrowNext'/>" +
+                    "<ul>" +
                 "<% if (property.Foto2 != '') { %>" +
-                    "<a href='api/<% print(property.Foto2); %>' target='_blank'><img src='api/<% print(property.Foto2); %>' width='150' height='150'></a>" +
+                    "<li><a href='api/<% print(property.Foto2); %>' target='_blank'><img src='api/<% print(property.Foto2); %>' width='150' height='150'></a></li>" +
                 "<% } %>"+
                 "<% if (property.Foto3 != '') { %>" +
-                    "<a href='api/<% print(property.Foto3); %>' target='_blank'><img src='api/<% print(property.Foto3); %>' width='150' height='150'></a>" +
+                    "<li><a href='api/<% print(property.Foto3); %>' target='_blank'><img src='api/<% print(property.Foto3); %>' width='150' height='150'></a></li>" +
                 "<% } %>"+
                 "<% if (property.Foto4 != '') { %>" +
-                    "<a href='api/<% print(property.Foto4); %>' target='_blank'><img src='api/<% print(property.Foto4); %>' width='150' height='150'></a>" +
+                    "<li><a href='api/<% print(property.Foto4); %>' target='_blank'><img src='api/<% print(property.Foto4); %>' width='150' height='150'></a></li>" +
                 "<% } %>"+
                 "<% if (property.Foto5 != '') { %>" +
-                    "<a href='api/<% print(property.Foto5); %>' target='_blank'><img src='api/<% print(property.Foto5); %>' width='150' height='150'></a>" +
+                    "<li><a href='api/<% print(property.Foto5); %>' target='_blank'><img src='api/<% print(property.Foto5); %>' width='150' height='150'></a></li>" +
                 "<% } %>"+
                 "<% if (property.Foto6 != '') { %>" +
-                    "<a href='api/<% print(property.Foto6); %>' target='_blank'><img src='api/<% print(property.Foto6); %>' width='150' height='150'></a>" +
+                    "<li><a href='api/<% print(property.Foto6); %>' target='_blank'><img src='api/<% print(property.Foto6); %>' width='150' height='150'></a></li>" +
                 "<% } %>"+
+                    "</ul>" +
                 "</div>" +
             "<% } %>" +
         "</div>" +

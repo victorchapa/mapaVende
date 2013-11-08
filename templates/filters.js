@@ -1,8 +1,5 @@
 TEMPLATES.filters = 
     "<script type='text/template'>" +
-        "<div class='logoContainer'>" +
-            "<img src='assets/img/mapaLogo.png'>" +
-        "</div>" +
         "<div class='groupFilter'>" +
             "<h2>Filtros</h2>" +
             "<p>Tipo de Operación:</p> " +
