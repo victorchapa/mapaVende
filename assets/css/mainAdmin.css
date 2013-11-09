@@ -1,0 +1,9 @@
+/* Styling for AdminPanel */
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-dialog {
+  width: 663px;
+}
