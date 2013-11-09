@@ -10,6 +10,29 @@ var PropertiesListView = Backbone.View.extend({
     initialize: function(){
     },
 
+    googleLoader: function(){
+ var map      = null;
+    var geocoder = null;
+      map = new GMap2(document.getElementById("map"));
+      map.setCenter(new GLatLng(19.23944127048188,-103.723670410115625), 15);
+      map.addControl(new GSmallMapControl());
+        map.addControl(new GMapTypeControl());
+      geocoder = new GClientGeocoder();
+          GEvent.addListener(map, "click",
+            function(marker, point) {
+                if (marker) {
+          null;
+        } else {
+            map.clearOverlays();
+                     var marcador = new GMarker(point);
+                     map.addOverlay(marcador);
+                     var puntos = point.y.toFixed(6)+","+point.x.toFixed(6);
+                     document.form.coordenadas.value = String(puntos);
+                    }
+            }
+             );
+    },
+
     functionClicks: function(){
 	    $('.cambiar').on('change', function(el){
             var id= $(el.target).val();
@@ -47,6 +70,7 @@ var PropertiesListView = Backbone.View.extend({
                 self.functionClicks();
                 $(".datePicker").datepicker();
                 $("#modalInmuebles").modal("show");
+                self.googleLoader();
             },
         });
     },
@@ -69,6 +93,7 @@ var PropertiesListView = Backbone.View.extend({
                         $("#modalInmueblesDisplayer").html(compiledTemplate(newData));
                         self.functionClicks();
                         $("#modalInmuebles").modal("show");
+                        self.googleLoader();
                     },
                 });
             },

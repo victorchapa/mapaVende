@@ -1,10 +1,12 @@
 TEMPLATES.editProperty = 
     "<script type='text/template'>" +
+  "<div class='guide'>" +
   "<ul>" +
     "<li><a href='http://vimeo.com/15888243'>Video tutorial agregar propiedad</a></li>" +
     "<li><a href='http://vimeo.com/17195272'>Video tutorial redimencionar imagen</a></li>" +
     "<li><a href='http://www.ampicolima.com.mx/admin/archivos/vso_redimensionar.exe'>Baja aqui software redimenicionar</a></li>" +
   "</ul>" +
+  "</div>" +
   "<div class='formAgregar' onload='load();' onunload='GUnload();'>" +
     "<h1>Editar propiedad</h1>" +
     "<% console.log(propertyData); %>" +
@@ -22,21 +24,21 @@ TEMPLATES.editProperty =
         "<option value='<% print(propertyData.Municipio); %>'><% print(propertyData.Municipio); %></option>" +
       "</select></p>" +
       "<p>Superficie de construcción: <input type='text' name='construccion' value='<% print(propertyData.Construccion); %>'/>" +
-      "<select name='unidad1'>" +
+      " <select name='unidad1'>" +
         "<option value='<% print(propertyData.Unidad1); %>'><% print(propertyData.Unidad1); %></option>" +
       "<option value='M2'>M2</option>" +
       "<option value='Hectarea'>Hectarea</option>" +
       "<option value='Acre'>Acre</option>" +
       "</select></p>" +
       "<p>Superficie del terreno: <input type='text' name='terreno' value='<% print(propertyData.Terreno); %>'/>" +
-      "<select name='unidad2'>" +
+      " <select name='unidad2'>" +
         "<option value='<% print(propertyData.Unidad2); %>'><% print(propertyData.Unidad2); %></option>" +
       "<option value='M2'>M2</option>" +
       "<option value='Hectarea'>Hectarea</option>" +
       "<option value='Acre'>Acre</option>" +
       "</select></p>" +
       "<p>Precio: <input type='text' name='precio' value='<% print(propertyData.Precio); %>'/>" +
-      "<select name='moneda'>" +
+      " <select name='moneda'>" +
         "<option value='<% print(propertyData.Moneda); %>'><% print(propertyData.Moneda); %></option>" +
         "<option value='Pesos'>Pesos</option>" +
         "<option value='Dolares'>Dolares</option>" +

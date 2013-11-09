@@ -11,6 +11,7 @@
 
 .formAgregar textarea {
   width: 400px;
+  resize: none;
 }
 
 .guide {

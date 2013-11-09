@@ -83,7 +83,7 @@
 				echo "<td>".$propiedad["Estado"]."</td>";
 				echo "<td>".$propiedad["Municipio"]."</td>";
         echo "<td>".$propiedad["TOperacion"]."</td>";
-				echo "<td><a class='editProperty' idProperty=".$propiedad["IdPropiedad"]." href='#'>Modificar</a>";
+				echo "<td><a class='editProperty' idProperty=".$propiedad["IdPropiedad"]." href='#'>Modificar</a></br>";
 				echo "<a class='rmProperty' href=". ("baja.php?id=". $propiedad["IdPropiedad"]) .">Cerrar</a></td></tr>";
 				}
 			} else {
