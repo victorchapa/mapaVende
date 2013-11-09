@@ -1,10 +1,12 @@
 TEMPLATES.addProperty = 
     "<script type='text/template'>" +
+  "<div class='guide'>" +
   "<ul>" +
     "<li><a href='http://vimeo.com/15888243'>Video tutorial agregar propiedad</a></li>" +
     "<li><a href='http://vimeo.com/17195272'>Video tutorial redimencionar imagen</a></li>" +
     "<li><a href='http://www.ampicolima.com.mx/admin/archivos/vso_redimensionar.exe'>Baja aqui software redimenicionar</a></li>" +
   "</ul>" +
+  "</div>" +
   "<div class='formAgregar' onload='load();' onunload='GUnload();'>" +
     "<h1>Agregar propiedad</h1>" +
     "<form name ='form' method='post' action='api/addProperty.php' enctype='multipart/form-data'>" +
@@ -20,19 +22,19 @@ TEMPLATES.addProperty =
         "<option>Seleccione un municipio</option>" +
       "</select></p>" +
       "<p>Superficie de construcción: <input type='text' name='construccion'/>" +
-      "<select name='unidad1'>" +
+      " <select name='unidad1'>" +
       "<option value='M2'>M2</option>" +
       "<option value='Hectarea'>Hectarea</option>" +
       "<option value='Acre'>Acre</option>" +
       "</select></p>" +
       "<p>Superficie del terreno: <input type='text' name='terreno'/>" +
-      "<select name='unidad2'>" +
+      " <select name='unidad2'>" +
       "<option value='M2'>M2</option>" +
       "<option value='Hectarea'>Hectarea</option>" +
       "<option value='Acre'>Acre</option>" +
       "</select></p>" +
       "<p>Precio: <input type='text' name='precio'></input>" +
-      "<select name='moneda'>" +
+      " <select name='moneda'>" +
       "<option value='Pesos'>Pesos</option>" +
       "<option value='Dolares'>Dolares</option>" +
       "<option value='por M2'>por M2</option>" +
@@ -91,9 +93,10 @@ TEMPLATES.addProperty =
           "<option value ='Departamento'>Departamento</option>" +
           "<option value ='Hotel'>Hotel</option>" +
       "</select></p>" +
-      "<p>Fecha inicio de disponibilidad: <input type='text' id='datePicker' name='finicio'><p>" +
-      "<p>Fecha final de disponibilidad: <input type='text' id='datePicker' name='ffin'><p>" +
-      "<p>Descripción: <textarea id='descripcion' name='descripcion' rows='10' maxlength='500'></textarea>" +
+      "<p>Fecha inicio de disponibilidad: <input type='text' class='datePicker' name='finicio'><p>" +
+      "<p>Fecha final de disponibilidad: <input type='text' class='datePicker' name='ffin'><p>" +
+      "<p>Descripción: </p>" +
+      "<textarea id='descripcion' name='descripcion' rows='5' maxlength='500'></textarea>" +
       "<p>Imagenes (máximo 6): <input type='file' name='foto[]' multiple='multiple' accept='image/jpeg, image/bmp'>" +
       "<p>Coordenadas: <input type='text' name='coordenadas' readonly='readonly' style='width: 180px;'/></p>" +
       "<div id='map' style='width: 600px; height: 400px; position: relative; background-color: rgb(229, 227, 223);'>" +

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/bootstrapModal.css">
     <link rel="stylesheet" href="assets/css/mainAdmin.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/cupertino/jquery-uiCupertino.css">
     <script src="assets/js/libs/jquery.js"></script>
     <script src="assets/js/libs/underscore.js"></script>
     <script src="assets/js/libs/backbone.js"></script>
@@ -51,31 +52,38 @@
      </script>
 	</head>
 	<body>
-		<h1>Lista de inmuebles</h1>
-		<div>
+    <div class='logoContainer'>
+      <img src='assets/img/mapaLogo.png'>
+    </div>
+		<div class="menu">
 			<ul>
 				<li><a href="lista_propiedades.php">Inmuebles</a></li>
 				<li><a href="mis_movimientos.php">Mis movimientos</a></li>
 				<li><a href="api/exit.php">Salir</a></li>
 			</ul>
 		</div>
-		<div>
-			<a href="#" class="addProperty" >Agregar Inmueble</a>
-		<?php if($propiedades) { ?>
-		<table>
+		<div class="tableProperties">
+    <h1>Lista de inmuebles</h1>
+      <a href="#" class="addProperty" ><input type="button" class="btnNaranja" value="Agregar Inmueble"/></a>
+    <?php if($propiedades) { ?>
+		<table border="1">
 			<thead>
 				<th>Dirección</th>
+        <th>Colonia</th>
 				<th>Estado</th>
 				<th>Municipio</th>
-				<th>Operaciones</th>
+        <th>Operación</th>
+				<th>Acciones</th>
 			</thead>
 			<tbody>
 			<?php
 				foreach ($propiedades as $propiedad){
-				echo "<tr><td>".$propiedad["Direccion"]."</br>".$propiedad["Colonia"]."</td>";
+				echo "<tr><td>".$propiedad["Direccion"]."</td>";
+        echo "<td>".$propiedad["Colonia"]."</td>";
 				echo "<td>".$propiedad["Estado"]."</td>";
 				echo "<td>".$propiedad["Municipio"]."</td>";
-				echo "<td><a href=". ("editar.php?id=". $propiedad["IdPropiedad"]) .">Modificar</a>";
+        echo "<td>".$propiedad["TOperacion"]."</td>";
+				echo "<td><a href=". ("editar.php?id=". $propiedad["IdPropiedad"]) .">Modificar</a></br>";
 				echo "<a href=". ("baja.php?id=". $propiedad["IdPropiedad"]) .">Cerrar</a></td></tr>";
 				}
 			} else {

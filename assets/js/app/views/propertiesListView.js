@@ -44,6 +44,7 @@ var PropertiesListView = Backbone.View.extend({
                 var estados = {estados: data}
                 $("#modalInmueblesDisplayer").html(compiledTemplate(estados));
                 self.functionClicks();
+                $(".datePicker").datepicker();
                 $("#modalInmuebles").modal("show");
             },
         });

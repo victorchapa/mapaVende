@@ -6,4 +6,74 @@
 
 .modal-dialog {
   width: 663px;
+  margin: auto;
+}
+
+.formAgregar textarea {
+  width: 400px;
+}
+
+.guide {
+	float: right;
+}
+
+.logoContainer {
+  width: 25%;
+  margin-top: -20px;
+  float: left;
+}
+
+.tableProperties {
+	clear: left;
+	float: left;
+	margin-left: 10px;
+}
+.tableProperties table{
+	margin-top: 10px;
+	text-align: center;
+	width: 600px;
+}
+
+.tableProperties table thead{
+	background-color: #08088A;
+	color: white;
+}
+
+.menu {
+	width: 370px;
+	float: left;
+	border-radius: 5px;
+	background-color: #08088A;
+	margin-top: 10px;
+}
+
+.menu ul li{
+  	display: inline;
+  	margin: 0 12px 0 0;
+  	padding-right: 12px;
+  	border-right: 5px solid silver;
+  	font-size: 14px;
+  	font-weight: bold;
+  	text-align: center;
+}
+
+.menu ul li:last-child {
+  border-right: none;
+}
+
+.menu li a{
+	color: white;
+}
+
+.menu li a:hover{
+	text-decoration: none;
+}
+
+.btnNaranja {
+  background: #FF8000;
+  border-color: #DF7401;
+  color: #F2F2F2;
+  font-weight: bold;
+  height: 30px;
+  border-radius: 5px;
 }
