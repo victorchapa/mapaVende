@@ -1,26 +1,21 @@
 TEMPLATES.addProperty = 
     "<script type='text/template'>" +
-    "<body onload='load();' onunload='GUnload();'>" +
-  "<ul>" +
-    "<li><a href='lista_propiedades.php'>Inmuebles</a></li>" +
-    "<li><a href='mis_movimientos.php'>Mis movimientos</a></li>" +
-    "<li><a href='api/exit.php'>Salir</a></li>" +
-  "</ul>" +
   "<ul>" +
     "<li><a href='http://vimeo.com/15888243'>Video tutorial agregar propiedad</a></li>" +
     "<li><a href='http://vimeo.com/17195272'>Video tutorial redimencionar imagen</a></li>" +
     "<li><a href='http://www.ampicolima.com.mx/admin/archivos/vso_redimensionar.exe'>Baja aqui software redimenicionar</a></li>" +
   "</ul>" +
-  "</div>" +
-  "<div class='formAgregar'>" +
+  "<div class='formAgregar' onload='load();' onunload='GUnload();'>" +
     "<h1>Agregar propiedad</h1>" +
     "<form name ='form' method='post' action='api/addProperty.php' enctype='multipart/form-data'>" +
       "<p>Dirección: <input type= 'text' name='direccion'/></p>" +
       "<p>Colonia: <input type= 'text' name='colonia'/></p>" +
       "<p>Estado: <select name='estado' class='cambiar'>"+
         "<option value='0'>Seleccione un estado</option>" +
-        "<option value='<% print(estado.id_estado); %>'><% print(estado.estado); %></option>" +
-      "</select></p>"
+        "<% _.each(estados, function(estado) { %>" +
+            "<option value='<% print(estado.id_estado); %>'><% print(estado.estado); %></option>" +
+        "<% }); %>" +
+      "</select></p>" +
       "<p>Municipio: <select name='municipio' class='municipio'>" +
         "<option>Seleccione un municipio</option>" +
       "</select></p>" +
@@ -106,5 +101,4 @@ TEMPLATES.addProperty =
       "<p><input type='submit' name='agregar' value='Agregar'></p>" +
     "</form>" +
   "</div>" +
-"</body>" +
     "</script>";
