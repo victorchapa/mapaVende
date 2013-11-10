@@ -77,3 +77,16 @@
   height: 30px;
   border-radius: 5px;
 }
+
+.btn-details {
+  background: #0404B4;
+  border-color: #08088A;
+  color: #F2F2F2;
+  font-weight: bold;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.closeTitle {
+  margin-top: 0px;
+}
