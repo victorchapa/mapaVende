@@ -5,10 +5,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    	<meta charset="utf-8">
+    <meta charset="utf-8">
 		<title>Bienvenido al sistema</title>
-		<link rel="stylesheet" href="assets/css/mainAdmin.css">
-    	<link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrapModal.css">
+    <link rel="stylesheet" href="assets/css/mainAdmin.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <script src="assets/js/libs/jquery.js"></script>
+    <script src="assets/js/libs/underscore.js"></script>
+    <script src="assets/js/libs/backbone.js"></script>
+    <script src="assets/js/libs/bootstrapModal.js"></script>
 	</head>
 <body>
 	<div class='logoContainer'>
@@ -39,12 +44,40 @@
 		echo "<td>".$propiedad['TPropiedad']."</td>";
 		echo "<td>".$propiedad['TOperacion']."</td>";
 		echo "<td>".$propiedad['FFin']."</td>";
-		echo "<td><a href=". ("propiedad.php?id=". $propiedad["IdPropiedad"]) .">Ver</a></td></tr>";
+		echo "<td><a class='showProperty' idproperty=".$propiedad["IdPropiedad"]." href='#'>Ver</a></td></tr>";
 		}
 		echo "</tbody></table>";
 	} else {
 	echo "<p>No haz hecho ningún movimiento</p>";}
 	?>
+		<tbody>
+	</table>
 	</div>
+    <div class="modal" id="modalMovimientos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title">Datos de la Propiedad</h2>
+          </div>
+          <div id="modalMovimientosDisplayer" class="modal-body wrapper">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-details" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Scripting -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/routerMovimientos.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <!-- Templates -->
+    <script src="templates/propertyMovimientos.js"></script>
+    <!-- Collections -->
+    <!-- Models -->
+    <script src="assets/js/app/models/property.js"></script>
+    <!-- Views -->
+    <script src="assets/js/app/views/myMovesView.js"></script>
 	</body>
 </html>

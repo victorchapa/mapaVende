@@ -9,7 +9,6 @@ TEMPLATES.editProperty =
   "</div>" +
   "<div class='formAgregar' onload='load();' onunload='GUnload();'>" +
     "<h1>Editar propiedad</h1>" +
-    "<% console.log(propertyData); %>" +
     "<form name ='form' method='post' action='api/editProperty.php' enctype='multipart/form-data'>" +
       "<input type='hidden' name='id' value='<% print(propertyData.IdPropiedad); %>'></input>" +
       "<p>Dirección: <input type= 'text' name='direccion' value='<% print(propertyData.Direccion); %>'/></p>" +
