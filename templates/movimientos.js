@@ -1,13 +1,7 @@
-TEMPLATES.property = 
+TEMPLATES.movimientos = 
     "<script type='text/template'>" + 
     "<div class='propertyContainer'>" +
         "<div class='property'>" +
-            "<input type= 'text' hidden='true' name='idPropiedad' value='<% print(property.IdPropiedad); %>'>" +
-            "<div class='toContactForm'>" +
-                "<a href ='#'>" +
-                    "<input id='showContactForm' class='btn-default' type='button' value='Contacto'>" +
-                "</a>" +
-            "</div>" +
             "<p><span class='bold'>Tipo de propiedad:</span> <% print(property.TPropiedad); %></p>" +
             "<p><span class='bold'>Dirección:</span> <% print(property.Direccion); %></p>" +
             "<p><span class='bold'>Colonia:</span> <% print(property.Colonia); %></p>" +
@@ -22,6 +16,9 @@ TEMPLATES.property =
             "<p><span class='bold'>Municipio:</span> <% print(property.Municipio); %></p>" +
             "<p><span class='bold'>Tamaño de la construcción:</span> <% print(property.Construccion); %>"+" "+"<% print(property.Unidad1); %></p>" +
             "<p><span class='bold'>Tamaño del terreno:</span> <% print(property.Terreno); %>"+" "+"<% print(property.Unidad2); %></p>" +
+            "<p><span class='bold'>Fecha de inicio:</span> <% print(property.FInicio); %></p>" +
+            "<p><span class='bold'>Fecha de cierre:</span> <% print(property.FFin); %></p>" +
+            "<p><span class='bold'>Motivo del cierre:</span> <% print(property.Disponible); %></p>" +
             "<p><span class='bold'>Descripción:</span> <% print(property.Descripcion); %></p>" +
             "<% if (property.Foto2 != '') { %>" +
                 "<p class='showMorePhotos'>Mostrar más fotos...</p>" +

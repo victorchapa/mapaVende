@@ -18,13 +18,4 @@
 			return $arreglo;
 		}
 	}
-
-	function add($nonequery){
-		require('dbConfig.php');
-		$conexion =  mysql_connect($serverAddress, $user, $passwd);
-		mysql_select_db($dbName);
-		$regresar= mysql_query($nonequery,$conexion);
-		mysql_close($conexion);
-		return $regresar;
-	}
 ?>
