@@ -86,12 +86,11 @@
 				echo "<td><a class='editProperty' idProperty=".$propiedad["IdPropiedad"]." href='#'>Modificar</a></br>";
 				echo "<a class='rmProperty' idProperty=". $propiedad["IdPropiedad"]." href='#'>Cerrar</a></td></tr>";
 				}
+        echo "</tbody></table>";
 			} else {
 			echo "<p>No tienes ninguna propiedad</p>";
 			}
 			?>
-			<tbody>
-		</table>
     </div>
     <div class="modal" id="modalInmuebles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">

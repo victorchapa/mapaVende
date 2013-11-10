@@ -7,19 +7,24 @@
 	<head>
     	<meta charset="utf-8">
 		<title>Bienvenido al sistema</title>
+		<link rel="stylesheet" href="assets/css/mainAdmin.css">
+    	<link rel="stylesheet" href="assets/css/normalize.css">
 	</head>
 <body>
-	<h1>Mis movimientos</h1>
-	<div>
+	<div class='logoContainer'>
+      <img src='assets/img/mapaLogo.png'>
+    </div>
+	<div class="menu">
 	<ul>
 		<li><a href="lista_propiedades.php">Inmuebles</a></li>
 		<li><a href="mis_movimientos.php">Mis movimientos</a></li>
 		<li><a href="api/exit.php">Salir</a></li>
 	</ul>
 	</div>
+	<div class="tableProperties">
+	<h1>Lista de movimientos</h1>
 	<?php if($propiedades) { ?>
-	<div>
-	<table>
+	<table border="1">
 		<thead>
 			<th>Dirección</th>
 			<th>Tipo propiedad</th>
@@ -36,10 +41,10 @@
 		echo "<td>".$propiedad['FFin']."</td>";
 		echo "<td><a href=". ("propiedad.php?id=". $propiedad["IdPropiedad"]) .">Ver</a></td></tr>";
 		}
+		echo "</tbody></table>";
 	} else {
 	echo "<p>No haz hecho ningún movimiento</p>";}
 	?>
-		<tbody>
-	</table>
+	</div>
 	</body>
 </html>
