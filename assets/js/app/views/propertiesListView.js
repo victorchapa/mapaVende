@@ -5,6 +5,7 @@ var PropertiesListView = Backbone.View.extend({
     events: {
         "click .addProperty"    :   "addProperty",
         "click .editProperty"   :   "editProperty",
+        "click .rmProperty"     :   "shutdownProperty",
     },
 
     initialize: function(){
@@ -92,10 +93,27 @@ var PropertiesListView = Backbone.View.extend({
                         var newData = {propertyData: data}
                         $("#modalInmueblesDisplayer").html(compiledTemplate(newData));
                         self.functionClicks();
+                        $(".datePicker").datepicker();
                         $("#modalInmuebles").modal("show");
                         self.googleLoader();
                     },
                 });
+            },
+        });
+    },
+
+    shutdownProperty: function(e){
+        var template = TEMPLATES.baja;
+        var compilatedTemplate = _.template($(template).html());
+        var id = $(e.target).attr("idproperty");
+        var propertyModel = new PropertyModel(id);
+        propertyModel.fetch({
+            success: function(data){
+                var data = data.toJSON();
+                data = data[0];
+                var property = {property: data};
+                $("#modalInmueblesDisplayer").html(compilatedTemplate(property))
+                $("#modalInmuebles").modal("show");
             },
         });
     },

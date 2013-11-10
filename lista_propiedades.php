@@ -84,7 +84,7 @@
 				echo "<td>".$propiedad["Municipio"]."</td>";
         echo "<td>".$propiedad["TOperacion"]."</td>";
 				echo "<td><a class='editProperty' idProperty=".$propiedad["IdPropiedad"]." href='#'>Modificar</a></br>";
-				echo "<a class='rmProperty' href=". ("baja.php?id=". $propiedad["IdPropiedad"]) .">Cerrar</a></td></tr>";
+				echo "<a class='rmProperty' idProperty=". $propiedad["IdPropiedad"]." href='#'>Cerrar</a></td></tr>";
 				}
 			} else {
 			echo "<p>No tienes ninguna propiedad</p>";
@@ -115,6 +115,7 @@
     <!-- Templates -->
     <script src="templates/addProperty.js"></script>
     <script src="templates/editProperty.js"></script>
+    <script src="templates/baja.js"></script>
     <!-- Collections -->
     <script src="assets/js/app/collections/estados.js"></script>
     <!-- Models -->

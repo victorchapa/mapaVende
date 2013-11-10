@@ -1,11 +1,13 @@
 TEMPLATES.baja = 
     "<script type='text/template'>" +
     "<form method='post' action='api/cerrar.php'>" +
+    "<h1 class='closeTitle'>Cerrar propiedad</h1>" +
     "<input type= 'text' hidden='true' name='id_propiedad' value='<% print(property.IdPropiedad); %>'/>" +
     "<p>Dirección: <input type= 'text' disabled='true' name='direccion' value='<% print(property.Direccion); %>'/></p>" +
     "<p>Colonia: <input type= 'text' disabled='true' name='colonia' value='<% print(property.Colonia); %>'/></p>" +
     "<p>Estado: <input type= 'text' disabled='true' name='estado' value='<% print(property.Estado); %>'/></p>" +
     "<p>Municipio: <input type= 'text' disabled='true' name='municipio' value='<% print(property.Municipio); %>'/></p>" +
+    "<p>Tipo de Operación: <input type= 'text' disabled='true' name='toperacion' value='<% print(property.TOperacion); %>'/></p>" +
     "<p>Fecha de inicio: <input type= 'text' disabled='true' name='fecha_inicio' value='<% print(property.FInicio); %>'/></p>" +
     "<p>Tipo de cierre: <select name='cierre'>" +
     "<option value='0'>Seleccione una opción</option>" +
@@ -26,6 +28,6 @@ TEMPLATES.baja =
     "<option value='por metro cuadrado'>por metro cuadrado</option>" +
     "<option value='por hectarea'>por hectarea</option>" +
     "</select></p>" +
-    "<input type='submit' name='guardar' value='Guardar'>" +
+    "<input class='btnNaranja' type='submit' name='guardar' value='Guardar'>" +
     "</form>" +
     "</script>";

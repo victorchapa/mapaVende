@@ -102,8 +102,8 @@ TEMPLATES.editProperty =
           "<option value ='Departamento'>Departamento</option>" +
           "<option value ='Hotel'>Hotel</option>" +
       "</select></p>" +
-      "<p>Fecha inicio de disponibilidad: <input type='text' id='datePicker' name='finicio' value='<% print(propertyData.FInicio); %>'><p>" +
-      "<p>Fecha final de disponibilidad: <input type='text' id='datePicker' name='ffin' value='<% print(propertyData.FFin); %>'><p>" +
+      "<p>Fecha inicio de disponibilidad: <input class='datePicker' type='text' id='datePicker' name='finicio' value='<% print(propertyData.FInicio); %>'><p>" +
+      "<p>Fecha final de disponibilidad: <input class='datePicker' type='text' id='datePicker' name='ffin' value='<% print(propertyData.FFin); %>'><p>" +
       "<p>Descripción: <textarea id='descripcion' name='descripcion' rows='10' maxlength='500' ><% print(propertyData.Descripcion); %></textarea>" +
       "<p>Imagenes (máximo 6): <input type='file' name='foto[]' multiple='multiple' accept='image/jpeg, image/bmp'>" +
       "<p>Coordenadas: <input type='text' name='coordenadas' readonly='readonly' value='<% print(propertyData.Coordenadas); %>' style='width: 180px;'/></p>" +

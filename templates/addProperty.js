@@ -101,7 +101,7 @@ TEMPLATES.addProperty =
       "<p>Coordenadas: <input type='text' name='coordenadas' readonly='readonly' style='width: 180px;'/></p>" +
       "<div id='map' style='width: 600px; height: 400px; position: relative; background-color: rgb(229, 227, 223);'>" +
       "</div>" +
-      "<p><input type='submit' name='agregar' value='Agregar'></p>" +
+      "<p><input class='btnNaranja' type='submit' name='agregar' value='Agregar'></p>" +
     "</form>" +
   "</div>" +
     "</script>";
