@@ -515,6 +515,9 @@ var FiltersView = Backbone.View.extend({
                 var data = data.toJSON();
                 var mayorHabi = parseFloat(data[0].Cuarto); 
                 var menorHabi = parseFloat(data[data.length - 1].Cuarto);
+                if(isNaN(menorHabi) == true){
+                    menorHabi = 0;
+                }
                 self.renderSliderHabitaciones(mayorHabi, menorHabi);
             },
         });
