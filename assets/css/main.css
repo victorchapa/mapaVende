@@ -271,7 +271,7 @@ footer.block {
   margin: 0;
   padding: 0;
   border: 0;
-  height: 61px;
+  height: 55px;
   width: 40px;
   left: 0;
   background: url("../img/arrowBack.png");
@@ -284,8 +284,8 @@ footer.block {
   margin: 0;
   padding: 0;
   border: 0;
+  height: 55px;
   width: 40px;
-  height: 61px;
   right: 0;
   background: url("../img/arrowNext.png");
 }

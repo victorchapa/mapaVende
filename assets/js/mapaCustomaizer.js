@@ -27,12 +27,26 @@ function mapApplication(){
 
 function drawingMarkers(data){
     allPropertiesMarkers = new Array();
-    var image = new google.maps.MarkerImage("assets/img/house_green.png");
+
+    var imageVenta = new google.maps.MarkerImage("assets/img/house_green.png");
+    var imageRenta = new google.maps.MarkerImage("assets/img/house_red.png");
+    var imageTraspaso = new google.maps.MarkerImage("assets/img/house_yellow.png");
 
     _.each(data, function(propertie){
         var coordenades = propertie.Coordenadas.split(",");
         coordenades[0] = parseFloat(coordenades[0]);
         coordenades[1] = parseFloat(coordenades[1]);
+        switch(propertie.TOperacion){
+            case "Venta":
+                var image = imageVenta;
+                break;
+            case "Renta":
+                var image = imageRenta;
+                break;
+            case "Traspaso":
+                var image = imageTraspaso;
+                break;
+        }
 
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(coordenades[0], coordenades[1]),
@@ -88,6 +102,7 @@ function drawingMarkers(data){
         
         google.maps.event.addListener(markerInfo, "domready", function(){
 
+            var counter = 0;
             var templateProper = TEMPLATES.property;
             var templateContact = TEMPLATES.contact;
             var compilatedTemplateP = _.template($(templateProper).html());
@@ -128,26 +143,37 @@ function drawingMarkers(data){
                     }, 1500);
                 });
 
-                $("#nextImg").on("mouseover", function(e){
-                    mouseInterval = setInterval(function(){
-                        console.log("Next");
-                    }, 1000);
+                $("#nextImg").on("click", function(e){
+                    var marginLeft = $("ul", ".imgGroup").css("margin-left");
+                    marginLeft = marginLeft.split("px");
+                    marginLeft = parseFloat(marginLeft[0]);
+                    if(marginLeft == 0){
+                        counter = -150;
+                    }else if(counter > -300){
+                        counter = counter - 150;
+                    }
+                    if(marginLeft > -300){
+                        $("ul", ".imgGroup").css({
+                            marginLeft: counter+ "px",
+                        });
+                    }
                 });
 
-                $("#nextImg").on("mouseleave", function(e){
-                    clearInterval(mouseInterval);
+                $("#backImg").on("click", function(e){
+                    var marginLeft = $("ul", ".imgGroup").css("margin-left");
+                    marginLeft = marginLeft.split("px");
+                    marginLeft = parseFloat(marginLeft[0]);
+                    if(marginLeft == 0){
+                        counter = 150;
+                    }else if(counter < 0){
+                        counter = counter + 150;
+                    }
+                    if(marginLeft < 0){
+                        $("ul", ".imgGroup").css({
+                            marginLeft: counter + "px",
+                        });
+                    }
                 });
-
-                $("#backImg").on("mouseover", function(e){
-                    mouseInterval = setInterval(function(){
-                        console.log("Back");
-                    }, 1000);
-                });
-
-                $("#backImg").on("mouseleave", function(e){
-                    clearInterval(mouseInterval);
-                });
-
 
             });
 
