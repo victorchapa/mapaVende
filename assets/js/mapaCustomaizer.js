@@ -27,12 +27,26 @@ function mapApplication(){
 
 function drawingMarkers(data){
     allPropertiesMarkers = new Array();
-    var image = new google.maps.MarkerImage("assets/img/house_green.png");
+
+    var imageVenta = new google.maps.MarkerImage("assets/img/house_green.png");
+    var imageRenta = new google.maps.MarkerImage("assets/img/house_red.png");
+    var imageTraspaso = new google.maps.MarkerImage("assets/img/house_yellow.png");
 
     _.each(data, function(propertie){
         var coordenades = propertie.Coordenadas.split(",");
         coordenades[0] = parseFloat(coordenades[0]);
         coordenades[1] = parseFloat(coordenades[1]);
+        switch(propertie.TOperacion){
+            case "Venta":
+                var image = imageVenta;
+                break;
+            case "Renta":
+                var image = imageRenta;
+                break;
+            case "Traspaso":
+                var image = imageTraspaso;
+                break;
+        }
 
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(coordenades[0], coordenades[1]),
