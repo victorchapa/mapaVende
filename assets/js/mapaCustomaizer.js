@@ -28,9 +28,21 @@ function mapApplication(){
 function drawingMarkers(data){
     allPropertiesMarkers = new Array();
 
-    var imageVenta = new google.maps.MarkerImage("assets/img/house_green.png");
-    var imageRenta = new google.maps.MarkerImage("assets/img/house_red.png");
-    var imageTraspaso = new google.maps.MarkerImage("assets/img/house_yellow.png");
+    var imageCasaVenta = new google.maps.MarkerImage("assets/img/house_red.png");
+    var imageCasaRenta = new google.maps.MarkerImage("assets/img/house_green.png");
+    var imageCasaTraspaso = new google.maps.MarkerImage("assets/img/house_yellow.png");
+
+    var imageEdificioVenta = new google.maps.MarkerImage("assets/img/edificio_rojo.jpg");
+    var imageEdificioRenta = new google.maps.MarkerImage("assets/img/edificio_verde.jpg");
+
+    var imageLocalVenta = new google.maps.MarkerImage("assets/img/local_rojo.jpg");
+    var imageLocalRenta = new google.maps.MarkerImage("assets/img/local_verde.jpg");
+
+    var imageRanchVenta = new google.maps.MarkerImage("assets/img/rancho_rojo.jpg");
+    var imageRanchRenta = new google.maps.MarkerImage("assets/img/rancho_verde.jpg");
+
+    var imageTerrenoVenta = new google.maps.MarkerImage("assets/img/terreno_rojo.jpg");
+    var imageTerrenoRenta = new google.maps.MarkerImage("assets/img/terreno_verde.jpg");
 
     _.each(data, function(propertie){
         var coordenades = propertie.Coordenadas.split(",");
@@ -38,13 +50,87 @@ function drawingMarkers(data){
         coordenades[1] = parseFloat(coordenades[1]);
         switch(propertie.TOperacion){
             case "Venta":
-                var image = imageVenta;
+                switch(propertie.TPropiedad){
+                    case "Casa":
+                        var image = imageCasaVenta;
+                        break;
+                    case "Terreno":
+                        var image = imageTerrenoVenta;
+                        break;
+                    case "Edificio":
+                        var image = imageEdificioVenta;
+                        break;
+                    case "Local":
+                        var image = imageLocalVenta;
+                        break;
+                    case "Oficina":
+                        var image = imageEdificioVenta;
+                        break;
+                    case "Terreno comercial":
+                        var image = imageTerrenoVenta;
+                        break;
+                    case "Terreno urbano":
+                        var image = imageTerrenoVenta;
+                        break;
+                    case "Terreno campestre":
+                        var image = imageTerrenoVenta;
+                        break;
+                    case "Bodega":
+                        var image = imageLocalVenta;
+                        break;
+                    case "Rancho":
+                        var image = imageRanchVenta;
+                        break;
+                    case "Departamento":
+                        var image = imageCasaVenta;
+                        break;
+                    case "Hotel":
+                        var image = imageEdificioVenta;
+                        break;
+                }
                 break;
             case "Renta":
-                var image = imageRenta;
+                switch(propertie.TPropiedad){
+                    case "Casa":
+                        var image = imageCasaRenta;
+                        break;
+                    case "Terreno":
+                        var image = imageTerrenoRenta;
+                        break;
+                    case "Edificio":
+                        var image = imageEdificioRenta;
+                        break;
+                    case "Local":
+                        var image = imageLocalRenta;
+                        break;
+                    case "Oficina":
+                        var image = imageEdificioRenta;
+                        break;
+                    case "Terreno comercial":
+                        var image = imageTerrenoRenta;
+                        break;
+                    case "Terreno urbano":
+                        var image = imageTerrenoRenta;
+                        break;
+                    case "Terreno campestre":
+                        var image = imageTerrenoRenta;
+                        break;
+                    case "Bodega":
+                        var image = imageLocalRenta;
+                        break;
+                    case "Rancho":
+                        var image = imageRanchRenta;
+                        break;
+                    case "Departamento":
+                        var image = imageCasaRenta;
+                        break;
+                    case "Hotel":
+                        var image = imageEdificioRenta;
+                        break;
+                }
                 break;
             case "Traspaso":
-                var image = imageTraspaso;
+                var image = imageCasaTraspaso;
                 break;
         }
 
